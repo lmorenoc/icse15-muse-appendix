@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>org.apache.commons.io.FileUtils.listFiles(java.io.File,java.lang.String[],boolean) - USAGE EXAMPLES</title>
+<style type="text/css">
+h3{color:#800; font-family:"Courier New", Courier, monospace; font-size:20px}
+</style>
+</head>
+<body style="background-color:#EEE">
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 1</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#3f5fbf">/**</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#3f5fbf">*&nbsp;The&nbsp;date&nbsp;on&nbsp;which&nbsp;the&nbsp;Isomorphic&nbsp;build&nbsp;was&nbsp;made&nbsp;publicly&nbsp;available&nbsp;at</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#3f5fbf">*&nbsp;&lt;a&nbsp;href=&#34;http://www.smartclient.com/builds/&#34;&gt;http://www.smartclient.com/builds/</font><font color="#7f7f9f">&lt;/a&gt;</font><font color="#3f5fbf">,</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#3f5fbf">*&nbsp;in&nbsp;yyyy-MM-dd&nbsp;format.&nbsp;&nbsp;e.g.,&nbsp;2013-25-12.&nbsp;&nbsp;Used&nbsp;to&nbsp;determine&nbsp;both&nbsp;remote&nbsp;and&nbsp;local&nbsp;file&nbsp;locations.</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;br/&gt;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">Default&nbsp;value&nbsp;is</font><font color="#7f7f9f">&lt;/b&gt;</font><font color="#3f5fbf">:&nbsp;</font><font color="#7f7f9f">&lt;tt&gt;</font><font color="#3f5fbf">The&nbsp;current&nbsp;date</font><font color="#7f7f9f">&lt;/tt&gt;</font><font color="#3f5fbf">.</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@since&nbsp;</font><font color="#3f5fbf">1.0.0</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#3f5fbf">*/</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#646464">@Parameter</font><font color="#000000">(</font><font color="#000000">property=</font><font color="#2a00ff">&#34;buildDate&#34;</font><font color="#000000">)&nbsp;</font><font color="#7f0055"><b>protected&nbsp;</b></font><font color="#000000">String&nbsp;buildDate;</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#3f5fbf">/**</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#3f5fbf">*&nbsp;The&nbsp;path&nbsp;to&nbsp;some&nbsp;directory&nbsp;that&nbsp;is&nbsp;to&nbsp;be&nbsp;used&nbsp;for&nbsp;storing&nbsp;downloaded&nbsp;files,&nbsp;working&nbsp;copies,&nbsp;and&nbsp;so&nbsp;on.</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@since&nbsp;</font><font color="#3f5fbf">1.0.0</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#3f5fbf">*/</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#646464">@Parameter</font><font color="#000000">(</font><font color="#000000">property=</font><font color="#2a00ff">&#34;workdir&#34;</font><font color="#000000">,defaultValue=</font><font color="#2a00ff">&#34;${java.io.tmpdir}/${project.artifactId}&#34;</font><font color="#000000">)&nbsp;</font><font color="#7f0055"><b>protected&nbsp;</b></font><font color="#000000">File&nbsp;workdir;</font><br />
+<font color="#808080">15</font>&nbsp;<font color="#3f5fbf">/**</font><br />
+<font color="#808080">16</font>&nbsp;<font color="#3f5fbf">*&nbsp;One&nbsp;of&nbsp;SMARTGWT,&nbsp;SMARTCLIENT,&nbsp;or&nbsp;SMARTGWT_MOBILE.</font><br />
+<font color="#808080">17</font>&nbsp;<font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@since&nbsp;</font><font color="#3f5fbf">1.0.0</font><br />
+<font color="#808080">18</font>&nbsp;<font color="#3f5fbf">*/</font><br />
+<font color="#808080">19</font>&nbsp;<font color="#646464">@Parameter</font><font color="#000000">(</font><font color="#000000">property=</font><font color="#2a00ff">&#34;product&#34;</font><font color="#000000">,defaultValue=</font><font color="#2a00ff">&#34;SMARTGWT&#34;</font><font color="#000000">)&nbsp;</font><font color="#7f0055"><b>protected&nbsp;</b></font><font color="#000000">Product&nbsp;product;</font><br />
+<font color="#808080">20</font>&nbsp;<font color="#3f5fbf">/**</font><br />
+<font color="#808080">21</font>&nbsp;<font color="#3f5fbf">*&nbsp;Typically&nbsp;one&nbsp;of:&nbsp;LGPL,&nbsp;EVAL,&nbsp;PRO,&nbsp;POWER,&nbsp;ENTERPRISE.&nbsp;&nbsp;Although&nbsp;it&nbsp;is&nbsp;also&nbsp;valid&nbsp;to</font><br />
+<font color="#808080">22</font>&nbsp;<font color="#3f5fbf">*&nbsp;specify&nbsp;optional&nbsp;modules&nbsp;ANALYTICS_MODULE&nbsp;or&nbsp;MESSAGING_MODULE,&nbsp;generally</font><br />
+<font color="#808080">23</font>&nbsp;<font color="#3f5fbf">*&nbsp;prefer&nbsp;the&nbsp;</font><font color="#3f3fbf">{@link&nbsp;#includeAnalytics}&nbsp;</font><font color="#3f5fbf">/&nbsp;</font><font color="#3f3fbf">{@link&nbsp;#includeMessaging}&nbsp;</font><font color="#3f5fbf">properties,&nbsp;respectively,&nbsp;to&nbsp;cause</font><br />
+<font color="#808080">24</font>&nbsp;<font color="#3f5fbf">*&nbsp;the&nbsp;optional&nbsp;modules&nbsp;to&nbsp;be&nbsp;included&nbsp;with&nbsp;the&nbsp;base&nbsp;installation&nbsp;/&nbsp;deployment.</font><br />
+<font color="#808080">25</font>&nbsp;<font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@since&nbsp;</font><font color="#3f5fbf">1.0.0</font><br />
+<font color="#808080">26</font>&nbsp;<font color="#3f5fbf">*/</font><br />
+<font color="#808080">27</font>&nbsp;<font color="#646464">@Parameter</font><font color="#000000">(</font><font color="#000000">property=</font><font color="#2a00ff">&#34;license&#34;</font><font color="#000000">,required=</font><font color="#7f0055"><b>true</b></font><font color="#000000">)&nbsp;</font><font color="#7f0055"><b>protected&nbsp;</b></font><font color="#000000">License&nbsp;license;</font><br />
+<font color="#808080">28</font>&nbsp;<font color="#3f5fbf">/**</font><br />
+<font color="#808080">29</font>&nbsp;<font color="#3f5fbf">*&nbsp;The&nbsp;Isomorphic&nbsp;version&nbsp;number&nbsp;of&nbsp;the&nbsp;specified&nbsp;</font><font color="#3f3fbf">{@link&nbsp;#product}</font><font color="#3f5fbf">.&nbsp;&nbsp;e.g.,&nbsp;9.1d,&nbsp;4.0p.</font><br />
+<font color="#808080">30</font>&nbsp;<font color="#3f5fbf">*&nbsp;Used&nbsp;to&nbsp;determine&nbsp;both&nbsp;remote&nbsp;and&nbsp;local&nbsp;file&nbsp;locations.</font><br />
+<font color="#808080">31</font>&nbsp;<font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@since&nbsp;</font><font color="#3f5fbf">1.0.0</font><br />
+<font color="#808080">32</font>&nbsp;<font color="#3f5fbf">*/</font><br />
+<font color="#808080">33</font>&nbsp;<font color="#646464">@Parameter</font><font color="#000000">(</font><font color="#000000">property=</font><font color="#2a00ff">&#34;buildNumber&#34;</font><font color="#000000">,required=</font><font color="#7f0055"><b>true</b></font><font color="#000000">)&nbsp;</font><font color="#7f0055"><b>protected&nbsp;</b></font><font color="#000000">String&nbsp;buildNumber;</font><br />
+<font color="#808080">34</font>&nbsp;<font color="#000000">SimpleDateFormat&nbsp;dateFormat=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">SimpleDateFormat</font><font color="#000000">(</font><font color="#2a00ff">&#34;yyyy-MM-dd&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">35</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">buildDate&nbsp;==&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">)</font><br />
+<font color="#808080">36</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">37</font>&nbsp;<font color="#000000">buildDate=dateFormat.format</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Date</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#808080">38</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">39</font>&nbsp;<font color="#000000">File&nbsp;basedir=FileUtils.getFile</font><font color="#000000">(</font><font color="#000000">workdir,product.toString</font><font color="#000000">()</font><font color="#000000">,license.toString</font><font color="#000000">()</font><font color="#000000">,buildNumber,buildDate</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">40</font>&nbsp;<font color="#000000">String</font><font color="#000000">[]&nbsp;</font><font color="#000000">executables=</font><font color="#000000">{</font><font color="#2a00ff">&#34;bat&#34;</font><font color="#000000">,</font><font color="#2a00ff">&#34;sh&#34;</font><font color="#000000">,</font><font color="#2a00ff">&#34;command&#34;</font><font color="#000000">}</font><font color="#000000">;</font><br />
+<font color="#808080">41</font>&nbsp;<font color="#3f7f5f">//basedir&nbsp;-&gt;&nbsp;the&nbsp;directory&nbsp;to&nbsp;search&nbsp;in</font><br />
+<font color="#808080">42</font>&nbsp;<font color="#3f7f5f">//executables&nbsp;-&gt;&nbsp;an&nbsp;array&nbsp;of&nbsp;extensions,&nbsp;ex.&nbsp;{&#34;java&#34;,&#34;xml&#34;}.&nbsp;If&nbsp;this&nbsp;parameter&nbsp;is&nbsp;null&nbsp;,&nbsp;all&nbsp;files&nbsp;are&nbsp;returned.</font><br />
+<font color="#808080">43</font>&nbsp;<font color="#3f7f5f">//true&nbsp;-&gt;&nbsp;if&nbsp;true&nbsp;all&nbsp;subdirectories&nbsp;are&nbsp;searched&nbsp;as&nbsp;well</font><br />
+<font color="#808080">44</font>&nbsp;<font color="#000000">FileUtils.listFiles</font><font color="#000000">(</font><font color="#000000">basedir,executables,true</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 2</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">String&nbsp;extension;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#7f0055"><b>for</b></font><font color="#000000">(</font><font color="#000000">File&nbsp;src&nbsp;:&nbsp;filesOrDirs</font><font color="#000000">)</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">!src.exists</font><font color="#000000">())</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#7f0055"><b>throw&nbsp;new&nbsp;</b></font><font color="#000000">KrakatauException</font><font color="#000000">(</font><font color="#2a00ff">&#34;Invalid&nbsp;file&nbsp;or&nbsp;directory:&nbsp;[&#34;&nbsp;</font><font color="#000000">+&nbsp;src.getAbsolutePath</font><font color="#000000">()&nbsp;</font><font color="#000000">+&nbsp;</font><font color="#2a00ff">&#34;]&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#000000">listFiles</font><font color="#000000">(</font><font color="#000000">src,new&nbsp;String</font><font color="#000000">[]{</font><font color="#000000">extension</font><font color="#000000">}</font><font color="#000000">,true</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">9</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+</body></HTML>

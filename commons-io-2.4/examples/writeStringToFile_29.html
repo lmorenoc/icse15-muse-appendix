@@ -1,0 +1,466 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>org.apache.commons.io.FileUtils.writeStringToFile(java.io.File,java.lang.String) - USAGE EXAMPLES</title>
+<style type="text/css">
+h3{color:#800; font-family:"Courier New", Courier, monospace; font-size:20px}
+</style>
+</head>
+<body style="background-color:#EEE">
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 1</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">FileInfo&nbsp;template;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">FileInfo&nbsp;filter;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;outputBasePath;</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;outputDirectory=createOutputDirectory</font><font color="#000000">(</font><font color="#000000">template,filter,outputBasePath</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;templateFilename=template.getFile</font><font color="#000000">()</font><font color="#000000">.getName</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;outputFilename=FilenameUtils.separatorsToSystem</font><font color="#000000">(</font><font color="#000000">outputDirectory&nbsp;+&nbsp;templateFilename</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;rawTemplate=FileUtils.readFileToString</font><font color="#000000">(</font><font color="#000000">template.getFile</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">Properties&nbsp;properties=readFilterIntoProperties</font><font color="#000000">(</font><font color="#000000">filter</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;processedTemplate=StrSubstitutor.replace</font><font color="#000000">(</font><font color="#000000">rawTemplate,properties</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#3f7f5f">//newFile(outputFilename)&nbsp;-&gt;&nbsp;the&nbsp;file&nbsp;to&nbsp;write</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#3f7f5f">//processedTemplate&nbsp;-&gt;&nbsp;the&nbsp;content&nbsp;to&nbsp;write&nbsp;to&nbsp;the&nbsp;file</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#000000">FileUtils.writeStringToFile</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">outputFilename</font><font color="#000000">)</font><font color="#000000">,processedTemplate</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 2</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#646464">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;serial&#34;</font><font color="#000000">)&nbsp;</font><font color="#7f0055"><b>private&nbsp;final&nbsp;</b></font><font color="#000000">LogPosition&nbsp;nullPosition=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">LogPosition</font><font color="#000000">(){</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#000000">;</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#000000">String&nbsp;destination;</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#000000">File&nbsp;dataFile;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#000000">LogPosition&nbsp;position=positions.get</font><font color="#000000">(</font><font color="#000000">destination</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">position&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">&amp;&amp;&nbsp;position&nbsp;!=&nbsp;nullPosition</font><font color="#000000">)</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#000000">String&nbsp;json=JsonUtils.marshalToString</font><font color="#000000">(</font><font color="#000000">position</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#3f7f5f">//dataFile&nbsp;-&gt;&nbsp;the&nbsp;file&nbsp;to&nbsp;write</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#3f7f5f">//json&nbsp;-&gt;&nbsp;the&nbsp;content&nbsp;to&nbsp;write&nbsp;to&nbsp;the&nbsp;file</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#000000">FileUtils.writeStringToFile</font><font color="#000000">(</font><font color="#000000">dataFile,json</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 3</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#3f5fbf">/**</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f5fbf">*&nbsp;Temporary&nbsp;folder.</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f5fbf">*&nbsp;@checkstyle&nbsp;VisibilityModifier&nbsp;(3&nbsp;lines)</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f5fbf">*/</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#646464">@Rule&nbsp;</font><font color="#7f0055"><b>public&nbsp;transient&nbsp;</b></font><font color="#000000">TemporaryFolder&nbsp;temp=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">TemporaryFolder</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">File&nbsp;key=</font><font color="#7f0055"><b>this</b></font><font color="#000000">.temp.newFile</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#3f7f5f">//key&nbsp;-&gt;&nbsp;the&nbsp;file&nbsp;to&nbsp;write</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#3f7f5f">//&#34;&#34;&nbsp;-&gt;&nbsp;the&nbsp;content&nbsp;to&nbsp;write&nbsp;to&nbsp;the&nbsp;file</font><br />
+<font color="#808080">9</font>&nbsp;<font color="#000000">FileUtils.writeStringToFile</font><font color="#000000">(</font><font color="#000000">key,</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 4</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#3f5fbf">/**</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f5fbf">*&nbsp;Temporary&nbsp;folder.</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f5fbf">*&nbsp;@checkstyle&nbsp;VisibilityModifier&nbsp;(3&nbsp;lines)</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f5fbf">*/</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#646464">@Rule&nbsp;</font><font color="#7f0055"><b>public&nbsp;transient&nbsp;</b></font><font color="#000000">TemporaryFolder&nbsp;temp=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">TemporaryFolder</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">File&nbsp;war=</font><font color="#7f0055"><b>this</b></font><font color="#000000">.temp.newFile</font><font color="#000000">(</font><font color="#2a00ff">&#34;temp.war&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#3f7f5f">//war&nbsp;-&gt;&nbsp;the&nbsp;file&nbsp;to&nbsp;write</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#3f7f5f">//&#34;brokenJARfilecontent&#34;&nbsp;-&gt;&nbsp;the&nbsp;content&nbsp;to&nbsp;write&nbsp;to&nbsp;the&nbsp;file</font><br />
+<font color="#808080">9</font>&nbsp;<font color="#000000">FileUtils.writeStringToFile</font><font color="#000000">(</font><font color="#000000">war,</font><font color="#2a00ff">&#34;broken&nbsp;JAR&nbsp;file&nbsp;content&#34;</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 5</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#3f5fbf">/**</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f5fbf">*&nbsp;Temporary&nbsp;folder.</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f5fbf">*&nbsp;@checkstyle&nbsp;VisibilityModifier&nbsp;(3&nbsp;lines)</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f5fbf">*/</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#646464">@Rule&nbsp;</font><font color="#7f0055"><b>public&nbsp;transient&nbsp;</b></font><font color="#000000">TemporaryFolder&nbsp;temp=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">TemporaryFolder</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">File&nbsp;key=</font><font color="#7f0055"><b>this</b></font><font color="#000000">.temp.newFile</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#3f7f5f">//key&nbsp;-&gt;&nbsp;the&nbsp;file&nbsp;to&nbsp;write</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#3f7f5f">//IOUtils.toString(this.getClass().getResource(&#34;test-key.pem&#34;))&nbsp;-&gt;&nbsp;the&nbsp;content&nbsp;to&nbsp;write&nbsp;to&nbsp;the&nbsp;file</font><br />
+<font color="#808080">9</font>&nbsp;<font color="#000000">FileUtils.writeStringToFile</font><font color="#000000">(</font><font color="#000000">key,IOUtils.toString</font><font color="#000000">(</font><font color="#7f0055"><b>this</b></font><font color="#000000">.getClass</font><font color="#000000">()</font><font color="#000000">.getResource</font><font color="#000000">(</font><font color="#2a00ff">&#34;test-key.pem&#34;</font><font color="#000000">)))</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 6</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">JobManagerConfiguration&nbsp;jobManagerConfiguration;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#000000">StringWriter&nbsp;results=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">StringWriter</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#000000">File&nbsp;tempPBSFile=</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#000000">String&nbsp;scriptContent=results.toString</font><font color="#000000">()</font><font color="#000000">.replaceAll</font><font color="#000000">(</font><font color="#2a00ff">&#34;^[&nbsp;|\t]*\n$&#34;</font><font color="#000000">,</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">scriptContent.startsWith</font><font color="#000000">(</font><font color="#2a00ff">&#34;\n&#34;</font><font color="#000000">))</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#000000">scriptContent=scriptContent.substring</font><font color="#000000">(</font><font color="#990000">1</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">number=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">SecureRandom</font><font color="#000000">()</font><font color="#000000">.nextInt</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#000000">number=</font><font color="#000000">(</font><font color="#000000">number&nbsp;&lt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">?&nbsp;-number&nbsp;:&nbsp;number</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">tempPBSFile=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">Integer.toString</font><font color="#000000">(</font><font color="#000000">number</font><font color="#000000">)&nbsp;</font><font color="#000000">+&nbsp;jobManagerConfiguration.getScriptExtension</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#3f7f5f">//tempPBSFile&nbsp;-&gt;&nbsp;the&nbsp;file&nbsp;to&nbsp;write</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#3f7f5f">//scriptContent&nbsp;-&gt;&nbsp;the&nbsp;content&nbsp;to&nbsp;write&nbsp;to&nbsp;the&nbsp;file</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#000000">FileUtils.writeStringToFile</font><font color="#000000">(</font><font color="#000000">tempPBSFile,scriptContent</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 7</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">File&nbsp;file;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">String&nbsp;currentText=toString</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//file&nbsp;-&gt;&nbsp;the&nbsp;file&nbsp;to&nbsp;write</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//currentText&nbsp;-&gt;&nbsp;the&nbsp;content&nbsp;to&nbsp;write&nbsp;to&nbsp;the&nbsp;file</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">FileUtils.writeStringToFile</font><font color="#000000">(</font><font color="#000000">file,currentText</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 8</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#3f5fbf">/**</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#3f5fbf">*&nbsp;Location&nbsp;of&nbsp;shell&nbsp;script.</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#3f5fbf">*/</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#7f0055"><b>private&nbsp;final&nbsp;transient&nbsp;</b></font><font color="#000000">String&nbsp;script;</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#3f5fbf">/**</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#3f5fbf">*&nbsp;Default&nbsp;SSH&nbsp;location.</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#3f5fbf">*/</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#000000">String&nbsp;SSH=</font><font color="#2a00ff">&#34;/usr/bin/ssh&#34;</font><font color="#000000">;</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#646464">@NotNull&nbsp;</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">File&nbsp;temp;</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">File&nbsp;kfile=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">temp,</font><font color="#2a00ff">&#34;heroku.pem&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">File&nbsp;file=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">temp,</font><font color="#2a00ff">&#34;git-ssh.sh&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#7f0055"><b>this</b></font><font color="#000000">.script=file.getAbsolutePath</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#3f7f5f">//newFile(this.script)&nbsp;-&gt;&nbsp;the&nbsp;file&nbsp;to&nbsp;write</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#3f7f5f">//String.format(&#34;set-x&amp;&amp;%s-oUserKnownHostsFile=/dev/null-oStrictHostKeyChecking=no-i'%s'$@&#34;,Git.SSH,kfile.getAbsolutePath())&nbsp;-&gt;&nbsp;the&nbsp;content&nbsp;to&nbsp;write&nbsp;to&nbsp;the&nbsp;file</font><br />
+<font color="#808080">15</font>&nbsp;<font color="#000000">FileUtils.writeStringToFile</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#7f0055"><b>this</b></font><font color="#000000">.script</font><font color="#000000">)</font><font color="#000000">,String.format</font><font color="#000000">(</font><font color="#2a00ff">&#34;set&nbsp;-x&nbsp;&amp;&amp;&nbsp;%s&nbsp;-o&nbsp;UserKnownHostsFile=/dev/null&nbsp;-o&nbsp;StrictHostKeyChecking=no&nbsp;-i&nbsp;'%s'&nbsp;$@&#34;</font><font color="#000000">,Git.SSH,kfile.getAbsolutePath</font><font color="#000000">()))</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 9</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;name=</font><font color="#2a00ff">&#34;Test-Attribute-From-File&#34;</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;value=</font><font color="#2a00ff">&#34;some&nbsp;text&nbsp;value&nbsp;of&nbsp;attribute&#34;</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">File&nbsp;file=File.createTempFile</font><font color="#000000">(</font><font color="#2a00ff">&#34;test-&#34;</font><font color="#000000">,</font><font color="#2a00ff">&#34;.MF&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//file&nbsp;-&gt;&nbsp;the&nbsp;file&nbsp;to&nbsp;write</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#3f7f5f">//Logger.format(&#34;%s:%s\n&#34;,name,value)&nbsp;-&gt;&nbsp;the&nbsp;content&nbsp;to&nbsp;write&nbsp;to&nbsp;the&nbsp;file</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#000000">FileUtils.writeStringToFile</font><font color="#000000">(</font><font color="#000000">file,Logger.format</font><font color="#000000">(</font><font color="#2a00ff">&#34;%s:&nbsp;%s\n&#34;</font><font color="#000000">,name,value</font><font color="#000000">))</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 10</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#3f5fbf">/**</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#3f5fbf">*&nbsp;Location&nbsp;of&nbsp;repository.</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#3f5fbf">*/</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#7f0055"><b>private&nbsp;final&nbsp;transient&nbsp;</b></font><font color="#000000">String&nbsp;path;</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#646464">@NotNull&nbsp;</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;name;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#646464">@NotNull&nbsp;</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;content;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">File&nbsp;dir=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#7f0055"><b>this</b></font><font color="#000000">.path</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">File&nbsp;file=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">dir,name</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#3f7f5f">//file&nbsp;-&gt;&nbsp;the&nbsp;file&nbsp;to&nbsp;write</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#3f7f5f">//content&nbsp;-&gt;&nbsp;the&nbsp;content&nbsp;to&nbsp;write&nbsp;to&nbsp;the&nbsp;file</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">FileUtils.writeStringToFile</font><font color="#000000">(</font><font color="#000000">file,content</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 11</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">File&nbsp;file;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//file&nbsp;-&gt;&nbsp;the&nbsp;file&nbsp;to&nbsp;write</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//toString()&nbsp;-&gt;&nbsp;the&nbsp;content&nbsp;to&nbsp;write&nbsp;to&nbsp;the&nbsp;file</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">FileUtils.writeStringToFile</font><font color="#000000">(</font><font color="#000000">file,toString</font><font color="#000000">())</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 12</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">File&nbsp;dist;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//newFile(dist,&#34;support-files/my-default.cnf&#34;)&nbsp;-&gt;&nbsp;the&nbsp;file&nbsp;to&nbsp;write</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//&#34;[mysql]\n#nodefaults...&#34;&nbsp;-&gt;&nbsp;the&nbsp;content&nbsp;to&nbsp;write&nbsp;to&nbsp;the&nbsp;file</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">FileUtils.writeStringToFile</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">dist,</font><font color="#2a00ff">&#34;support-files/my-default.cnf&#34;</font><font color="#000000">)</font><font color="#000000">,</font><font color="#2a00ff">&#34;[mysql]\n#&nbsp;no&nbsp;defaults...&#34;</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+</body></HTML>

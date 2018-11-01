@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>org.apache.commons.lang3.StringUtils.removeEnd(java.lang.String,java.lang.String) - USAGE EXAMPLES</title>
+<style type="text/css">
+h3{color:#800; font-family:"Courier New", Courier, monospace; font-size:20px}
+</style>
+</head>
+<body style="background-color:#EEE">
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 1</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">StringBuffer&nbsp;b=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">StringBuffer</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">String&nbsp;str=b.toString</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//str&nbsp;-&gt;&nbsp;the&nbsp;source&nbsp;String&nbsp;to&nbsp;search,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//&#34;,&#34;&nbsp;-&gt;&nbsp;the&nbsp;String&nbsp;to&nbsp;search&nbsp;for&nbsp;and&nbsp;remove,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">StringUtils.removeEnd</font><font color="#000000">(</font><font color="#000000">str,</font><font color="#2a00ff">&#34;,&#34;</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 2</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#000000">JarFile&nbsp;jar;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#000000">Enumeration&lt;JarEntry&gt;&nbsp;entries=jar.entries</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#7f0055"><b>while</b></font><font color="#000000">(</font><font color="#000000">entries.hasMoreElements</font><font color="#000000">())</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#000000">JarEntry&nbsp;element=entries.nextElement</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#000000">String&nbsp;name=element.getName</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">name.toLowerCase</font><font color="#000000">()</font><font color="#000000">.endsWith</font><font color="#000000">(</font><font color="#2a00ff">&#34;.class&#34;</font><font color="#000000">))</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#000000">String&nbsp;className=StringUtils.replace</font><font color="#000000">(</font><font color="#000000">name,</font><font color="#2a00ff">&#34;/&#34;</font><font color="#000000">,</font><font color="#2a00ff">&#34;.&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#3f7f5f">//className&nbsp;-&gt;&nbsp;the&nbsp;source&nbsp;String&nbsp;to&nbsp;search,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#3f7f5f">//&#34;.class&#34;&nbsp;-&gt;&nbsp;the&nbsp;String&nbsp;to&nbsp;search&nbsp;for&nbsp;and&nbsp;remove,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#000000">className=StringUtils.removeEnd</font><font color="#000000">(</font><font color="#000000">className,</font><font color="#2a00ff">&#34;.class&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 3</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">String&nbsp;response=recorder.getResponseAsString</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">response=StringUtils.removeStart</font><font color="#000000">(</font><font color="#000000">response,MakeRequestHandler.IFRAME_RESPONSE_PREFIX</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//response&nbsp;-&gt;&nbsp;the&nbsp;source&nbsp;String&nbsp;to&nbsp;search,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//MakeRequestHandler.IFRAME_RESPONSE_SUFFIX&nbsp;-&gt;&nbsp;the&nbsp;String&nbsp;to&nbsp;search&nbsp;for&nbsp;and&nbsp;remove,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">response=StringUtils.removeEnd</font><font color="#000000">(</font><font color="#000000">response,MakeRequestHandler.IFRAME_RESPONSE_SUFFIX</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#000000">StringUtils.removeEnd</font><font color="#000000">(</font><font color="#000000">response,MakeRequestHandler.IFRAME_RESPONSE_SUFFIX</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 4</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>public&nbsp;static&nbsp;final&nbsp;</b></font><font color="#000000">String&nbsp;CLASS_ENDING=</font><font color="#2a00ff">&#34;.class&#34;</font><font color="#000000">;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#000000">String&nbsp;classFileName;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#000000">String&nbsp;basePath;</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#000000">String&nbsp;className=classFileName;</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#000000">className=StringUtils.removeStart</font><font color="#000000">(</font><font color="#000000">className,basePath</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#000000">className=StringUtils.removeStart</font><font color="#000000">(</font><font color="#000000">className,File.separator</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#3f7f5f">//className&nbsp;-&gt;&nbsp;the&nbsp;source&nbsp;String&nbsp;to&nbsp;search,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#3f7f5f">//CLASS_ENDING&nbsp;-&gt;&nbsp;the&nbsp;String&nbsp;to&nbsp;search&nbsp;for&nbsp;and&nbsp;remove,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#000000">className=StringUtils.removeEnd</font><font color="#000000">(</font><font color="#000000">className,CLASS_ENDING</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#000000">StringUtils.removeEnd</font><font color="#000000">(</font><font color="#000000">className,CLASS_ENDING</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+</body></HTML>

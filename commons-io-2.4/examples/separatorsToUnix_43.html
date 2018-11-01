@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>org.apache.commons.io.FilenameUtils.separatorsToUnix(java.lang.String) - USAGE EXAMPLES</title>
+<style type="text/css">
+h3{color:#800; font-family:"Courier New", Courier, monospace; font-size:20px}
+</style>
+</head>
+<body style="background-color:#EEE">
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 1</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">FileInfo&nbsp;filter;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;filterSource=filter.getRelativeSubDirectory</font><font color="#000000">()&nbsp;</font><font color="#000000">+&nbsp;filter.getNameWithoutExtension</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//filterSource&nbsp;-&gt;&nbsp;the&nbsp;path&nbsp;to&nbsp;be&nbsp;changed,&nbsp;null&nbsp;ignored</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">FilenameUtils.separatorsToUnix</font><font color="#000000">(</font><font color="#000000">filterSource</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 2</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">String&nbsp;path;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">File&nbsp;file=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">path,</font><font color="#2a00ff">&#34;database&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//file.getPath()&nbsp;-&gt;&nbsp;the&nbsp;path&nbsp;to&nbsp;be&nbsp;changed,&nbsp;null&nbsp;ignored</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">FilenameUtils.separatorsToUnix</font><font color="#000000">(</font><font color="#000000">file.getPath</font><font color="#000000">())</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+</body></HTML>

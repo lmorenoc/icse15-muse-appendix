@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>org.apache.commons.lang3.StringUtils.rightPad(java.lang.String,int) - USAGE EXAMPLES</title>
+<style type="text/css">
+h3{color:#800; font-family:"Courier New", Courier, monospace; font-size:20px}
+</style>
+</head>
+<body style="background-color:#EEE">
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 1</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">Map&lt;CLAPHelpCategoryImpl,Set&lt;CLAPHelpNode&gt;&gt;&nbsp;nodes=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">TreeMap&lt;CLAPHelpCategoryImpl,Set&lt;CLAPHelpNode&gt;&gt;</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">maxLength=</font><font color="#990000">0</font><font color="#000000">;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#7f0055"><b>for</b></font><font color="#000000">(</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">Entry&lt;CLAPHelpCategoryImpl,Set&lt;CLAPHelpNode&gt;&gt;&nbsp;entry&nbsp;:&nbsp;nodes.entrySet</font><font color="#000000">())</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#7f0055"><b>for</b></font><font color="#000000">(</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">CLAPHelpNode&nbsp;node&nbsp;:&nbsp;entry.getValue</font><font color="#000000">())</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">length=node.getHelpID</font><font color="#000000">()</font><font color="#000000">.length</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">length&nbsp;&gt;&nbsp;maxLength</font><font color="#000000">)</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#000000">maxLength=length;</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#000000">maxLength+=</font><font color="#990000">6</font><font color="#000000">;</font><br />
+<font color="#808080">15</font>&nbsp;<font color="#7f0055"><b>for</b></font><font color="#000000">(</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">Entry&lt;CLAPHelpCategoryImpl,Set&lt;CLAPHelpNode&gt;&gt;&nbsp;entry&nbsp;:&nbsp;nodes.entrySet</font><font color="#000000">())</font><br />
+<font color="#808080">16</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">17</font>&nbsp;<font color="#7f0055"><b>for</b></font><font color="#000000">(</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">CLAPHelpNode&nbsp;node&nbsp;:&nbsp;entry.getValue</font><font color="#000000">())</font><br />
+<font color="#808080">18</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">19</font>&nbsp;<font color="#3f7f5f">//node.getHelpID()&nbsp;-&gt;&nbsp;the&nbsp;String&nbsp;to&nbsp;pad&nbsp;out,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">20</font>&nbsp;<font color="#3f7f5f">//maxLength-2&nbsp;-&gt;&nbsp;the&nbsp;size&nbsp;to&nbsp;pad&nbsp;to</font><br />
+<font color="#808080">21</font>&nbsp;<font color="#000000">StringUtils.rightPad</font><font color="#000000">(</font><font color="#000000">node.getHelpID</font><font color="#000000">()</font><font color="#000000">,maxLength&nbsp;-&nbsp;</font><font color="#990000">2</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">22</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">23</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+</body></HTML>

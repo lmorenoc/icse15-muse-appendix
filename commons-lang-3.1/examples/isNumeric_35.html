@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>org.apache.commons.lang3.StringUtils.isNumeric(java.lang.CharSequence) - USAGE EXAMPLES</title>
+<style type="text/css">
+h3{color:#800; font-family:"Courier New", Courier, monospace; font-size:20px}
+</style>
+</head>
+<body style="background-color:#EEE">
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 1</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#000000">URL&nbsp;url;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#000000">Document&nbsp;doc;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#7f0055"><b>try</b></font><br />
+<font color="#808080">04</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#000000">doc=DOMHelper.getEventDocFromUrl</font><font color="#000000">(</font><font color="#000000">url.toString</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#000000">NodeList&nbsp;nlTrailers=doc.getElementsByTagName</font><font color="#000000">(</font><font color="#2a00ff">&#34;trailer&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#000000">Node&nbsp;nTrailer;</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#000000">Element&nbsp;eTrailer;</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#7f0055"><b>for</b></font><font color="#000000">(</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">loop=</font><font color="#990000">0</font><font color="#000000">;&nbsp;loop&nbsp;&lt;&nbsp;nlTrailers.getLength</font><font color="#000000">()</font><font color="#000000">;&nbsp;loop++</font><font color="#000000">)</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#000000">nTrailer=nlTrailers.item</font><font color="#000000">(</font><font color="#000000">loop</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">nTrailer.getNodeType</font><font color="#000000">()&nbsp;</font><font color="#000000">==&nbsp;Node.ELEMENT_NODE</font><font color="#000000">)</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">15</font>&nbsp;<font color="#000000">eTrailer=</font><font color="#000000">(</font><font color="#000000">Element</font><font color="#000000">)</font><font color="#000000">nTrailer;</font><br />
+<font color="#808080">16</font>&nbsp;<font color="#000000">String&nbsp;trailerId=DOMHelper.getValueFromElement</font><font color="#000000">(</font><font color="#000000">eTrailer,</font><font color="#2a00ff">&#34;trailer_id&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">17</font>&nbsp;<font color="#3f7f5f">//trailerId&nbsp;-&gt;&nbsp;the&nbsp;CharSequence&nbsp;to&nbsp;check,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">18</font>&nbsp;<font color="#000000">StringUtils.isNumeric</font><font color="#000000">(</font><font color="#000000">trailerId</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">19</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">20</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 2</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#000000">Set&lt;Integer&gt;&nbsp;NEGATIVE_CACHING_EXEMPT_STATUS=ImmutableSet.of</font><font color="#000000">(</font><font color="#000000">SC_UNAUTHORIZED,SC_FORBIDDEN</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">httpStatusCode;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">isError</font><font color="#000000">()&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;!NEGATIVE_CACHING_EXEMPT_STATUS.contains</font><font color="#000000">(</font><font color="#000000">httpStatusCode</font><font color="#000000">))</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">String&nbsp;retryAfter=</font><font color="#7f0055"><b>this</b></font><font color="#000000">.getHeader</font><font color="#000000">(</font><font color="#2a00ff">&#34;Retry-After&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#3f7f5f">//retryAfter&nbsp;-&gt;&nbsp;the&nbsp;CharSequence&nbsp;to&nbsp;check,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#000000">StringUtils.isNumeric</font><font color="#000000">(</font><font color="#000000">retryAfter</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 3</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">String&nbsp;number;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//number&nbsp;-&gt;&nbsp;the&nbsp;CharSequence&nbsp;to&nbsp;check,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">StringUtils.isNumeric</font><font color="#000000">(</font><font color="#000000">number</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+</body></HTML>

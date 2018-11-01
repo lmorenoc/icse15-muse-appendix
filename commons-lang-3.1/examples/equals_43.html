@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>org.apache.commons.lang3.StringUtils.equals(java.lang.CharSequence,java.lang.CharSequence) - USAGE EXAMPLES</title>
+<style type="text/css">
+h3{color:#800; font-family:"Courier New", Courier, monospace; font-size:20px}
+</style>
+</head>
+<body style="background-color:#EEE">
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 1</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">Object&nbsp;pOther;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">CLAPOptionNode&lt;?&gt;&nbsp;other=</font><font color="#000000">(</font><font color="#000000">CLAPOptionNode&lt;?&gt;</font><font color="#000000">)</font><font color="#000000">pOther;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//_descriptionNLSKey&nbsp;-&gt;&nbsp;the&nbsp;first&nbsp;CharSequence,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//other._descriptionNLSKey&nbsp;-&gt;&nbsp;the&nbsp;second&nbsp;CharSequence,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">StringUtils.equals</font><font color="#000000">(</font><font color="#000000">_descriptionNLSKey,other._descriptionNLSKey</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 2</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">NUMBER_OF_AUTHENTICATION_FIELDS=</font><font color="#990000">2</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#7f0055"><b>private&nbsp;final&nbsp;</b></font><font color="#000000">AuthenticationDetails&nbsp;authenticationDetails;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">credentials&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">&amp;&amp;&nbsp;credentials.length&nbsp;==&nbsp;NUMBER_OF_AUTHENTICATION_FIELDS</font><font color="#000000">)</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;submittedPassword=credentials</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">]</font><font color="#000000">;</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#3f7f5f">//submittedPassword&nbsp;-&gt;&nbsp;the&nbsp;first&nbsp;CharSequence,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#3f7f5f">//newString(authenticationDetails.password)&nbsp;-&gt;&nbsp;the&nbsp;second&nbsp;CharSequence,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#000000">StringUtils.equals</font><font color="#000000">(</font><font color="#000000">submittedPassword,new&nbsp;String</font><font color="#000000">(</font><font color="#000000">authenticationDetails.password</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#808080">9</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 3</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">String&nbsp;newRunner;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">File&nbsp;runnerDestination;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//newRunner&nbsp;-&gt;&nbsp;the&nbsp;first&nbsp;CharSequence,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//this.existingRunner(runnerDestination)&nbsp;-&gt;&nbsp;the&nbsp;second&nbsp;CharSequence,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">StringUtils.equals</font><font color="#000000">(</font><font color="#000000">newRunner,this.existingRunner</font><font color="#000000">(</font><font color="#000000">runnerDestination</font><font color="#000000">))</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 4</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#000000">String&nbsp;name;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#000000">Class&lt;?&gt;&nbsp;searchType=clazz;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#7f0055"><b>while</b></font><font color="#000000">(</font><font color="#000000">!Object.</font><font color="#7f0055"><b>class</b></font><font color="#000000">.equals</font><font color="#000000">(</font><font color="#000000">searchType</font><font color="#000000">))</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#000000">Field</font><font color="#000000">[]&nbsp;</font><font color="#000000">fields=searchType.getDeclaredFields</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#7f0055"><b>for</b></font><font color="#000000">(</font><font color="#000000">Field&nbsp;field&nbsp;:&nbsp;fields</font><font color="#000000">)</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#000000">StringUtils.equals</font><font color="#000000">(</font><font color="#000000">name,field.getName</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+</body></HTML>

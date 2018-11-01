@@ -1,0 +1,807 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>org.apache.commons.io.FileUtils.deleteDirectory(java.io.File) - USAGE EXAMPLES</title>
+<style type="text/css">
+h3{color:#800; font-family:"Courier New", Courier, monospace; font-size:20px}
+</style>
+</head>
+<body style="background-color:#EEE">
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 1</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#3f5fbf">/**</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f5fbf">*&nbsp;The&nbsp;instance&nbsp;directory</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f5fbf">*/</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">File&nbsp;instanceDirectory;</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#3f7f5f">//instanceDirectory&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">instanceDirectory</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 2</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">DirectoryService&nbsp;directoryService=DSAnnotationProcessor.getDirectoryService</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//directoryService.getInstanceLayout().getInstanceDirectory()&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">directoryService.getInstanceLayout</font><font color="#000000">()</font><font color="#000000">.getInstanceDirectory</font><font color="#000000">())</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 3</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">File&nbsp;schemaRepository;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//schemaRepository.getParentFile()&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">schemaRepository.getParentFile</font><font color="#000000">())</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 4</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">String&nbsp;workingDirectory;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">File&nbsp;schemaRepository;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#000000">workingDirectory=System.getProperty</font><font color="#000000">(</font><font color="#2a00ff">&#34;workingDirectory&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">workingDirectory&nbsp;==&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">)</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#000000">String&nbsp;path=SchemaManagerEnableDisableLoadTest.</font><font color="#7f0055"><b>class</b></font><font color="#000000">.getResource</font><font color="#000000">(</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">)</font><font color="#000000">.getPath</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">targetPos=path.indexOf</font><font color="#000000">(</font><font color="#2a00ff">&#34;target&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#000000">workingDirectory=path.substring</font><font color="#000000">(</font><font color="#990000">0</font><font color="#000000">,targetPos&nbsp;+&nbsp;</font><font color="#990000">6</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#000000">workingDirectory=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">workingDirectory,</font><font color="#2a00ff">&#34;SchemaManagerEnableDisableLoadTest&#34;</font><font color="#000000">)</font><font color="#000000">.getAbsolutePath</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">schemaRepository=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">workingDirectory,</font><font color="#2a00ff">&#34;schema&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#3f7f5f">//schemaRepository&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">schemaRepository</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 5</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">File&nbsp;workDir=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">System.getProperty</font><font color="#000000">(</font><font color="#2a00ff">&#34;java.io.tmpdir&#34;</font><font color="#000000">)&nbsp;</font><font color="#000000">+&nbsp;</font><font color="#2a00ff">&#34;/server-work&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//workDir&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">workDir</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 6</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">File&nbsp;workDir=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">System.getProperty</font><font color="#000000">(</font><font color="#2a00ff">&#34;java.io.tmpdir&#34;</font><font color="#000000">)&nbsp;</font><font color="#000000">+&nbsp;</font><font color="#2a00ff">&#34;/server-work&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">String&nbsp;workingDirectory=workDir.getPath</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">File&nbsp;schemaRepository=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">workingDirectory,</font><font color="#2a00ff">&#34;schema&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//schemaRepository&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">schemaRepository</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 7</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#646464">@Getter&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">File&nbsp;generatedAssetsFolder;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">generatedAssetsFolder=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#2a00ff">&#34;src/test/resources/generated&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//generatedAssetsFolder&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">generatedAssetsFolder</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 8</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#000000">File&nbsp;dataDir=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">tmp,</font><font color="#2a00ff">&#34;canal&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//dataDir&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">dataDir</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 9</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#646464">@Getter&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">File&nbsp;generatedAssetsFolder;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//generatedAssetsFolder&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">generatedAssetsFolder</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 10</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">String&nbsp;workingDirectory;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//newFile(workingDirectory+&#34;/schema&#34;)&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">workingDirectory&nbsp;+&nbsp;</font><font color="#2a00ff">&#34;/schema&#34;</font><font color="#000000">))</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 11</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">String&nbsp;workingDirectory;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#000000">workingDirectory=System.getProperty</font><font color="#000000">(</font><font color="#2a00ff">&#34;workingDirectory&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">workingDirectory&nbsp;==&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">)</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#000000">String&nbsp;path=LdifSchemaLoaderTest.</font><font color="#7f0055"><b>class</b></font><font color="#000000">.getResource</font><font color="#000000">(</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">)</font><font color="#000000">.getPath</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">targetPos=path.indexOf</font><font color="#000000">(</font><font color="#2a00ff">&#34;target&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#000000">workingDirectory=path.substring</font><font color="#000000">(</font><font color="#990000">0</font><font color="#000000">,targetPos&nbsp;+&nbsp;</font><font color="#990000">6</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#3f7f5f">//newFile(workingDirectory+&#34;/schema&#34;)&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">workingDirectory&nbsp;+&nbsp;</font><font color="#2a00ff">&#34;/schema&#34;</font><font color="#000000">))</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 12</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">File&nbsp;workDir;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">File&nbsp;tmpDir=SystemUtils.getJavaIoTmpDir</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">workDir=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">tmpDir,</font><font color="#2a00ff">&#34;workDir&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//workDir&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">workDir</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 13</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">LdapServer&nbsp;providerServer;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//providerServer.getDirectoryService().getInstanceLayout().getInstanceDirectory()&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">providerServer.getDirectoryService</font><font color="#000000">()</font><font color="#000000">.getInstanceLayout</font><font color="#000000">()</font><font color="#000000">.getInstanceDirectory</font><font color="#000000">())</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 14</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">File&nbsp;workDir;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">workDir=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">System.getProperty</font><font color="#000000">(</font><font color="#2a00ff">&#34;java.io.tmpdir&#34;</font><font color="#000000">)&nbsp;</font><font color="#000000">+&nbsp;</font><font color="#2a00ff">&#34;/server-work-&#34;&nbsp;</font><font color="#000000">+&nbsp;ChangePasswordConfigReaderTest.</font><font color="#7f0055"><b>class</b></font><font color="#000000">.getSimpleName</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">String&nbsp;workingDirectory=workDir.getPath</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">File&nbsp;schemaRepository=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">workingDirectory,</font><font color="#2a00ff">&#34;schema&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#3f7f5f">//schemaRepository&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">schemaRepository</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 15</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">DefaultDirectoryServiceFactory&nbsp;factory=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">DefaultDirectoryServiceFactory</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">DirectoryService&nbsp;service=factory.getDirectoryService</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//service.getInstanceLayout().getInstanceDirectory()&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">service.getInstanceLayout</font><font color="#000000">()</font><font color="#000000">.getInstanceDirectory</font><font color="#000000">())</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 16</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">File&nbsp;storeDir;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">storeDir=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">SystemUtils.JAVA_IO_TMPDIR,</font><font color="#2a00ff">&#34;storeDir&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//storeDir&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">storeDir</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 17</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">FrameworkMethod&nbsp;method;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">Description&nbsp;methodDescription=describeChild</font><font color="#000000">(</font><font color="#000000">method</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#7f0055"><b>try</b></font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">DirectoryService&nbsp;methodDS=DSAnnotationProcessor.getDirectoryService</font><font color="#000000">(</font><font color="#000000">methodDescription</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#3f7f5f">//methodDS.getInstanceLayout().getInstanceDirectory()&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">methodDS.getInstanceLayout</font><font color="#000000">()</font><font color="#000000">.getInstanceDirectory</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 18</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#646464">@Rule&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">TemporaryFolder&nbsp;tmpDir=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">TemporaryFolder</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">File&nbsp;wkdir2=tmpDir.newFolder</font><font color="#000000">(</font><font color="#000000">getClass</font><font color="#000000">()</font><font color="#000000">.getSimpleName</font><font color="#000000">()&nbsp;</font><font color="#000000">+&nbsp;</font><font color="#2a00ff">&#34;-store2&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//wkdir2&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">wkdir2</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 19</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">String&nbsp;workingDirectory;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">File&nbsp;schemaRepository;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#000000">workingDirectory=System.getProperty</font><font color="#000000">(</font><font color="#2a00ff">&#34;workingDirectory&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">workingDirectory&nbsp;==&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">)</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#000000">String&nbsp;path=MatchingRuleTest.</font><font color="#7f0055"><b>class</b></font><font color="#000000">.getResource</font><font color="#000000">(</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">)</font><font color="#000000">.getPath</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">targetPos=path.indexOf</font><font color="#000000">(</font><font color="#2a00ff">&#34;target&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#000000">workingDirectory=path.substring</font><font color="#000000">(</font><font color="#990000">0</font><font color="#000000">,targetPos&nbsp;+&nbsp;</font><font color="#990000">6</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#000000">schemaRepository=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">workingDirectory,</font><font color="#2a00ff">&#34;schema&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#3f7f5f">//schemaRepository&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">schemaRepository</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 20</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">File&nbsp;testDir;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#000000">String&nbsp;TEST_DIR=</font><font color="#2a00ff">&#34;target/test&#34;</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">testDir=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">TEST_DIR</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//testDir&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">testDir</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 21</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">String&nbsp;name;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">String&nbsp;instanceDirectory=System.getProperty</font><font color="#000000">(</font><font color="#2a00ff">&#34;workingDirectory&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">instanceDirectory&nbsp;==&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">)</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">instanceDirectory=System.getProperty</font><font color="#000000">(</font><font color="#2a00ff">&#34;java.io.tmpdir&#34;</font><font color="#000000">)&nbsp;</font><font color="#000000">+&nbsp;</font><font color="#2a00ff">&#34;/server-work-&#34;&nbsp;</font><font color="#000000">+&nbsp;name;</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#000000">InstanceLayout&nbsp;instanceLayout=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">InstanceLayout</font><font color="#000000">(</font><font color="#000000">instanceDirectory</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#3f7f5f">//instanceLayout.getInstanceDirectory()&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">9</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">instanceLayout.getInstanceDirectory</font><font color="#000000">())</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 22</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">File&nbsp;dir=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#2a00ff">&#34;target/db&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//dir&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">dir</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 23</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#3f5fbf">/**</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#3f5fbf">*&nbsp;The&nbsp;DirectoryService&nbsp;for&nbsp;this&nbsp;class,&nbsp;if&nbsp;any</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#3f5fbf">*/</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">DirectoryService&nbsp;classDS;</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#7f0055"><b>try</b></font><br />
+<font color="#808080">06</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#000000">classDS=DSAnnotationProcessor.getDirectoryService</font><font color="#000000">(</font><font color="#000000">getDescription</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#000000">DirectoryService&nbsp;directoryService=</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#000000">DirectoryServiceFactory&nbsp;dsf=DefaultDirectoryServiceFactory.</font><font color="#7f0055"><b>class</b></font><font color="#000000">.newInstance</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">directoryService=dsf.getDirectoryService</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#000000">classDS=directoryService;</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#3f7f5f">//classDS.getInstanceLayout().getInstanceDirectory()&nbsp;-&gt;&nbsp;directory&nbsp;to&nbsp;delete</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#000000">FileUtils.deleteDirectory</font><font color="#000000">(</font><font color="#000000">classDS.getInstanceLayout</font><font color="#000000">()</font><font color="#000000">.getInstanceDirectory</font><font color="#000000">())</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+</body></HTML>

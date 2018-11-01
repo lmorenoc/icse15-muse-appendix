@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>org.apache.commons.io.FileUtils.listFiles(java.io.File,org.apache.commons.io.filefilter.IOFileFilter,org.apache.commons.io.filefilter.IOFileFilter) - USAGE EXAMPLES</title>
+<style type="text/css">
+h3{color:#800; font-family:"Courier New", Courier, monospace; font-size:20px}
+</style>
+</head>
+<body style="background-color:#EEE">
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 1</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">File&nbsp;dir;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//dir&nbsp;-&gt;&nbsp;the&nbsp;directory&nbsp;to&nbsp;search&nbsp;in</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//TrueFileFilter.INSTANCE&nbsp;-&gt;&nbsp;filter&nbsp;to&nbsp;apply&nbsp;when&nbsp;finding&nbsp;files.</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//TrueFileFilter.INSTANCE&nbsp;-&gt;&nbsp;optional&nbsp;filter&nbsp;to&nbsp;apply&nbsp;when&nbsp;finding&nbsp;subdirectories.&nbsp;If&nbsp;this&nbsp;parameter&nbsp;is&nbsp;null&nbsp;,&nbsp;subdirectories&nbsp;will&nbsp;not&nbsp;be&nbsp;included&nbsp;in&nbsp;the&nbsp;search.&nbsp;Use&nbsp;TrueFileFilter.INSTANCE&nbsp;to&nbsp;match&nbsp;all&nbsp;directories.</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">FileUtils.listFiles</font><font color="#000000">(</font><font color="#000000">dir,TrueFileFilter.INSTANCE,TrueFileFilter.INSTANCE</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 2</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#000000">File&nbsp;basedir;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#7f0055"><b>try</b></font><br />
+<font color="#808080">03</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#3f7f5f">//basedir&nbsp;-&gt;&nbsp;the&nbsp;directory&nbsp;to&nbsp;search&nbsp;in</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#3f7f5f">//FileFilterUtils.or(FileFilterUtils.suffixFileFilter(&#34;jar&#34;),FileFilterUtils.suffixFileFilter(&#34;xml&#34;),FileFilterUtils.suffixFileFilter(&#34;zip&#34;))&nbsp;-&gt;&nbsp;filter&nbsp;to&nbsp;apply&nbsp;when&nbsp;finding&nbsp;files.</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#3f7f5f">//FileFilterUtils.or(FileFilterUtils.nameFileFilter(&#34;lib&#34;),FileFilterUtils.nameFileFilter(&#34;pom&#34;),FileFilterUtils.nameFileFilter(&#34;assembly&#34;))&nbsp;-&gt;&nbsp;optional&nbsp;filter&nbsp;to&nbsp;apply&nbsp;when&nbsp;finding&nbsp;subdirectories.&nbsp;If&nbsp;this&nbsp;parameter&nbsp;is&nbsp;null&nbsp;,&nbsp;subdirectories&nbsp;will&nbsp;not&nbsp;be&nbsp;included&nbsp;in&nbsp;the&nbsp;search.&nbsp;Use&nbsp;TrueFileFilter.INSTANCE&nbsp;to&nbsp;match&nbsp;all&nbsp;directories.</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#000000">Collection&lt;File&gt;&nbsp;files=FileUtils.listFiles</font><font color="#000000">(</font><font color="#000000">basedir,FileFilterUtils.or</font><font color="#000000">(</font><font color="#000000">FileFilterUtils.suffixFileFilter</font><font color="#000000">(</font><font color="#2a00ff">&#34;jar&#34;</font><font color="#000000">)</font><font color="#000000">,FileFilterUtils.suffixFileFilter</font><font color="#000000">(</font><font color="#2a00ff">&#34;xml&#34;</font><font color="#000000">)</font><font color="#000000">,FileFilterUtils.suffixFileFilter</font><font color="#000000">(</font><font color="#2a00ff">&#34;zip&#34;</font><font color="#000000">))</font><font color="#000000">,FileFilterUtils.or</font><font color="#000000">(</font><font color="#000000">FileFilterUtils.nameFileFilter</font><font color="#000000">(</font><font color="#2a00ff">&#34;lib&#34;</font><font color="#000000">)</font><font color="#000000">,FileFilterUtils.nameFileFilter</font><font color="#000000">(</font><font color="#2a00ff">&#34;pom&#34;</font><font color="#000000">)</font><font color="#000000">,FileFilterUtils.nameFileFilter</font><font color="#000000">(</font><font color="#2a00ff">&#34;assembly&#34;</font><font color="#000000">)))</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">files.isEmpty</font><font color="#000000">())</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#7f0055"><b>throw&nbsp;new&nbsp;</b></font><font color="#000000">MojoExecutionException</font><font color="#000000">(</font><font color="#000000">String.format</font><font color="#000000">(</font><font color="#2a00ff">&#34;There&nbsp;don't&nbsp;appear&nbsp;to&nbsp;be&nbsp;any&nbsp;files&nbsp;to&nbsp;work&nbsp;with&nbsp;at&nbsp;'%s'.&nbsp;&nbsp;Check&nbsp;earlier&nbsp;log&nbsp;entries&nbsp;for&nbsp;clues.&#34;</font><font color="#000000">,basedir.getAbsolutePath</font><font color="#000000">()))</font><font color="#000000">;</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#7f0055"><b>for</b></font><font color="#000000">(</font><font color="#000000">File&nbsp;file&nbsp;:&nbsp;files</font><font color="#000000">)</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#7f0055"><b>try</b></font><br />
+<font color="#808080">15</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">16</font>&nbsp;<font color="#000000">String&nbsp;base=FilenameUtils.getBaseName</font><font color="#000000">(</font><font color="#000000">file.getName</font><font color="#000000">()</font><font color="#000000">.replaceAll</font><font color="#000000">(</font><font color="#2a00ff">&#34;_&#34;</font><font color="#000000">,</font><font color="#2a00ff">&#34;-&#34;</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#808080">17</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#2a00ff">&#34;xml&#34;</font><font color="#000000">.equals</font><font color="#000000">(</font><font color="#000000">FilenameUtils.getExtension</font><font color="#000000">(</font><font color="#000000">file.getName</font><font color="#000000">())))</font><br />
+<font color="#808080">18</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">19</font>&nbsp;<font color="#7f0055"><b>continue</b></font><font color="#000000">;</font><br />
+<font color="#808080">20</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">21</font>&nbsp;<font color="#000000">IOFileFilter&nbsp;filter=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">WildcardFileFilter</font><font color="#000000">(</font><font color="#000000">base&nbsp;+&nbsp;</font><font color="#2a00ff">&#34;.pom&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">22</font>&nbsp;<font color="#000000">Collection&lt;File&gt;&nbsp;poms=FileUtils.listFiles</font><font color="#000000">(</font><font color="#000000">basedir,filter,TrueFileFilter.INSTANCE</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">23</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">24</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">25</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 3</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">File&nbsp;basedir;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//basedir&nbsp;-&gt;&nbsp;the&nbsp;directory&nbsp;to&nbsp;search&nbsp;in</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//FileFilterUtils.or(FileFilterUtils.suffixFileFilter(&#34;jar&#34;),FileFilterUtils.suffixFileFilter(&#34;xml&#34;),FileFilterUtils.suffixFileFilter(&#34;zip&#34;))&nbsp;-&gt;&nbsp;filter&nbsp;to&nbsp;apply&nbsp;when&nbsp;finding&nbsp;files.</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//FileFilterUtils.or(FileFilterUtils.nameFileFilter(&#34;lib&#34;),FileFilterUtils.nameFileFilter(&#34;pom&#34;),FileFilterUtils.nameFileFilter(&#34;assembly&#34;))&nbsp;-&gt;&nbsp;optional&nbsp;filter&nbsp;to&nbsp;apply&nbsp;when&nbsp;finding&nbsp;subdirectories.&nbsp;If&nbsp;this&nbsp;parameter&nbsp;is&nbsp;null&nbsp;,&nbsp;subdirectories&nbsp;will&nbsp;not&nbsp;be&nbsp;included&nbsp;in&nbsp;the&nbsp;search.&nbsp;Use&nbsp;TrueFileFilter.INSTANCE&nbsp;to&nbsp;match&nbsp;all&nbsp;directories.</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">FileUtils.listFiles</font><font color="#000000">(</font><font color="#000000">basedir,FileFilterUtils.or</font><font color="#000000">(</font><font color="#000000">FileFilterUtils.suffixFileFilter</font><font color="#000000">(</font><font color="#2a00ff">&#34;jar&#34;</font><font color="#000000">)</font><font color="#000000">,FileFilterUtils.suffixFileFilter</font><font color="#000000">(</font><font color="#2a00ff">&#34;xml&#34;</font><font color="#000000">)</font><font color="#000000">,FileFilterUtils.suffixFileFilter</font><font color="#000000">(</font><font color="#2a00ff">&#34;zip&#34;</font><font color="#000000">))</font><font color="#000000">,FileFilterUtils.or</font><font color="#000000">(</font><font color="#000000">FileFilterUtils.nameFileFilter</font><font color="#000000">(</font><font color="#2a00ff">&#34;lib&#34;</font><font color="#000000">)</font><font color="#000000">,FileFilterUtils.nameFileFilter</font><font color="#000000">(</font><font color="#2a00ff">&#34;pom&#34;</font><font color="#000000">)</font><font color="#000000">,FileFilterUtils.nameFileFilter</font><font color="#000000">(</font><font color="#2a00ff">&#34;assembly&#34;</font><font color="#000000">)))</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 4</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">File&nbsp;directory;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">String&nbsp;baseName=</font><font color="#2a00ff">&#34;mysql-bin.&#34;</font><font color="#000000">;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#000000">FileUtils.listFiles</font><font color="#000000">(</font><font color="#000000">directory,new&nbsp;IOFileFilter</font><font color="#000000">(){</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>boolean&nbsp;</b></font><font color="#000000">accept</font><font color="#000000">(&nbsp;&nbsp;</font><font color="#000000">File&nbsp;file</font><font color="#000000">){</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">file.getName</font><font color="#000000">()</font><font color="#000000">.startsWith</font><font color="#000000">(</font><font color="#000000">baseName</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>boolean&nbsp;</b></font><font color="#000000">accept</font><font color="#000000">(&nbsp;&nbsp;</font><font color="#000000">File&nbsp;dir,&nbsp;&nbsp;String&nbsp;name</font><font color="#000000">){</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#7f0055"><b>return&nbsp;true</b></font><font color="#000000">;</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">,null</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+</body></HTML>

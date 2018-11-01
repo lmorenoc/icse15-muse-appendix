@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>org.apache.commons.lang3.StringUtils.splitPreserveAllTokens(java.lang.String,char) - USAGE EXAMPLES</title>
+<style type="text/css">
+h3{color:#800; font-family:"Courier New", Courier, monospace; font-size:20px}
+</style>
+</head>
+<body style="background-color:#EEE">
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 1</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">String&nbsp;tagName;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//tagName&nbsp;-&gt;&nbsp;the&nbsp;String&nbsp;to&nbsp;parse,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//':'&nbsp;-&gt;&nbsp;the&nbsp;character&nbsp;used&nbsp;as&nbsp;the&nbsp;delimiter,&nbsp;null&nbsp;splits&nbsp;on&nbsp;whitespace</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">StringUtils.splitPreserveAllTokens</font><font color="#000000">(</font><font color="#000000">tagName,</font><font color="#990000">':'</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 2</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">List&lt;Part&gt;&nbsp;parts;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;operationPath;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#7f0055"><b>for</b></font><font color="#000000">(</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">i=</font><font color="#990000">0</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;Math.min</font><font color="#000000">(</font><font color="#000000">requestPathParts.length,parts.size</font><font color="#000000">())</font><font color="#000000">;&nbsp;i++</font><font color="#000000">)</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">parts.get</font><font color="#000000">(</font><font color="#000000">i</font><font color="#000000">)</font><font color="#000000">.type&nbsp;==&nbsp;PartType.SINGULAR_PARAM</font><font color="#000000">)</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">requestPathParts</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">]</font><font color="#000000">.indexOf</font><font color="#000000">(</font><font color="#990000">','</font><font color="#000000">)&nbsp;</font><font color="#000000">!=&nbsp;-</font><font color="#990000">1</font><font color="#000000">)</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#7f0055"><b>throw&nbsp;new&nbsp;</b></font><font color="#000000">ProtocolException</font><font color="#000000">(</font><font color="#000000">HttpServletResponse.SC_BAD_REQUEST,</font><font color="#2a00ff">&#34;Cannot&nbsp;expect&nbsp;plural&nbsp;value&nbsp;&#34;&nbsp;</font><font color="#000000">+&nbsp;requestPathParts</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">]&nbsp;</font><font color="#000000">+&nbsp;</font><font color="#2a00ff">&#34;&nbsp;for&nbsp;singular&nbsp;field&nbsp;&#34;</font><font color="#000000">+&nbsp;parts.get</font><font color="#000000">(</font><font color="#000000">i</font><font color="#000000">)</font><font color="#000000">+&nbsp;</font><font color="#2a00ff">&#34;&nbsp;for&nbsp;path&nbsp;&#34;</font><font color="#000000">+&nbsp;operationPath</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">StringUtils.splitPreserveAllTokens</font><font color="#000000">(</font><font color="#000000">requestPathParts</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">]</font><font color="#000000">,</font><font color="#990000">','</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 3</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>public&nbsp;static&nbsp;final&nbsp;</b></font><font color="#000000">String&nbsp;HEADERS_PARAM=</font><font color="#2a00ff">&#34;headers&#34;</font><font color="#000000">;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#000000">HttpServletRequest&nbsp;request;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#000000">String&nbsp;headerData=getParameter</font><font color="#000000">(</font><font color="#000000">request,HEADERS_PARAM,</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">headerData.length</font><font color="#000000">()&nbsp;</font><font color="#000000">&gt;&nbsp;</font><font color="#990000">0</font><font color="#000000">)</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#000000">String</font><font color="#000000">[]&nbsp;</font><font color="#000000">headerList=StringUtils.split</font><font color="#000000">(</font><font color="#000000">headerData,</font><font color="#990000">'&amp;'</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#7f0055"><b>for</b></font><font color="#000000">(</font><font color="#000000">String&nbsp;header&nbsp;:&nbsp;headerList</font><font color="#000000">)</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#3f7f5f">//header&nbsp;-&gt;&nbsp;the&nbsp;String&nbsp;to&nbsp;parse,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#3f7f5f">//'='&nbsp;-&gt;&nbsp;the&nbsp;character&nbsp;used&nbsp;as&nbsp;the&nbsp;delimiter,&nbsp;null&nbsp;splits&nbsp;on&nbsp;whitespace</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">String</font><font color="#000000">[]&nbsp;</font><font color="#000000">parts=StringUtils.splitPreserveAllTokens</font><font color="#000000">(</font><font color="#000000">header,</font><font color="#990000">'='</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 4</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">org.apache.shindig.gadgets.http.HttpRequest&nbsp;request;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">Uri&nbsp;uri=request.getUri</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//uri.getAuthority()&nbsp;-&gt;&nbsp;the&nbsp;String&nbsp;to&nbsp;parse,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//':'&nbsp;-&gt;&nbsp;the&nbsp;character&nbsp;used&nbsp;as&nbsp;the&nbsp;delimiter,&nbsp;null&nbsp;splits&nbsp;on&nbsp;whitespace</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">StringUtils.splitPreserveAllTokens</font><font color="#000000">(</font><font color="#000000">uri.getAuthority</font><font color="#000000">()</font><font color="#000000">,</font><font color="#990000">':'</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 5</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>for</b></font><font color="#000000">(</font><font color="#000000">Map.Entry&lt;String,String&gt;&nbsp;entry&nbsp;:&nbsp;params.entrySet</font><font color="#000000">())</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//entry.getKey()&nbsp;-&gt;&nbsp;the&nbsp;String&nbsp;to&nbsp;parse,&nbsp;may&nbsp;be&nbsp;null</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//'.'&nbsp;-&gt;&nbsp;the&nbsp;character&nbsp;used&nbsp;as&nbsp;the&nbsp;delimiter,&nbsp;null&nbsp;splits&nbsp;on&nbsp;whitespace</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">StringUtils.splitPreserveAllTokens</font><font color="#000000">(</font><font color="#000000">entry.getKey</font><font color="#000000">()</font><font color="#000000">,</font><font color="#990000">'.'</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+</body></HTML>

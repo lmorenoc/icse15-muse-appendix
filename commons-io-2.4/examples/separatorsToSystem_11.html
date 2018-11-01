@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>org.apache.commons.io.FilenameUtils.separatorsToSystem(java.lang.String) - USAGE EXAMPLES</title>
+<style type="text/css">
+h3{color:#800; font-family:"Courier New", Courier, monospace; font-size:20px}
+</style>
+</head>
+<body style="background-color:#EEE">
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 1</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#646464">@Parameter</font><font color="#000000">(</font><font color="#000000">defaultValue=</font><font color="#2a00ff">&#34;${basedir}/src/config/templates&#34;</font><font color="#000000">)&nbsp;</font><font color="#7f0055"><b>protected&nbsp;</b></font><font color="#000000">String&nbsp;templatesBasePath;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//templatesBasePath&nbsp;-&gt;&nbsp;the&nbsp;path&nbsp;to&nbsp;be&nbsp;changed,&nbsp;null&nbsp;ignored</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">FilenameUtils.separatorsToSystem</font><font color="#000000">(</font><font color="#000000">templatesBasePath</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 2</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">FileInfo&nbsp;template;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">FileInfo&nbsp;filter;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;outputBasePath;</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;outputDirectory=createOutputDirectory</font><font color="#000000">(</font><font color="#000000">template,filter,outputBasePath</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;templateFilename=template.getFile</font><font color="#000000">()</font><font color="#000000">.getName</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#3f7f5f">//outputDirectory+templateFilename&nbsp;-&gt;&nbsp;the&nbsp;path&nbsp;to&nbsp;be&nbsp;changed,&nbsp;null&nbsp;ignored</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#000000">FilenameUtils.separatorsToSystem</font><font color="#000000">(</font><font color="#000000">outputDirectory&nbsp;+&nbsp;templateFilename</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 3</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>for</b></font><font color="#000000">(</font><font color="#000000">String&nbsp;fileToIgnore&nbsp;:&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">LinkedHashSet&lt;String&gt;</font><font color="#000000">(</font><font color="#000000">filesToIgnore</font><font color="#000000">))</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">StringUtils.isNotBlank</font><font color="#000000">(</font><font color="#000000">fileToIgnore</font><font color="#000000">))</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#3f7f5f">//FilenameUtils.normalize(fileToIgnore.trim())&nbsp;-&gt;&nbsp;the&nbsp;path&nbsp;to&nbsp;be&nbsp;changed,&nbsp;null&nbsp;ignored</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#000000">fileToIgnore=FilenameUtils.separatorsToSystem</font><font color="#000000">(</font><font color="#000000">FilenameUtils.normalize</font><font color="#000000">(</font><font color="#000000">fileToIgnore.trim</font><font color="#000000">()))</font><font color="#000000">;</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+</body></HTML>

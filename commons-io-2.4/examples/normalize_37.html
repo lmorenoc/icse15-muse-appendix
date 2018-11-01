@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>org.apache.commons.io.FilenameUtils.normalize(java.lang.String) - USAGE EXAMPLES</title>
+<style type="text/css">
+h3{color:#800; font-family:"Courier New", Courier, monospace; font-size:20px}
+</style>
+</head>
+<body style="background-color:#EEE">
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 1</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>private&nbsp;final&nbsp;</b></font><font color="#000000">String&nbsp;pathSeparator;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;path;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">File&nbsp;directory=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#000000">path</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">Collection&lt;File&gt;&nbsp;allFiles=getAllFiles</font><font color="#000000">(</font><font color="#000000">directory</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;canonicalBaseDirectory=directory.getCanonicalPath</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#7f0055"><b>for</b></font><font color="#000000">(</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">File&nbsp;file&nbsp;:&nbsp;allFiles</font><font color="#000000">)</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;canonicalFilePath=FilenameUtils.getFullPathNoEndSeparator</font><font color="#000000">(</font><font color="#000000">file.getCanonicalPath</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#3f7f5f">//StringUtils.replaceOnce(canonicalFilePath,canonicalBaseDirectory,&#34;&#34;)+pathSeparator&nbsp;-&gt;&nbsp;the&nbsp;filename&nbsp;to&nbsp;normalize,&nbsp;null&nbsp;returns&nbsp;null</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#000000">FilenameUtils.normalize</font><font color="#000000">(</font><font color="#000000">StringUtils.replaceOnce</font><font color="#000000">(</font><font color="#000000">canonicalFilePath,canonicalBaseDirectory,</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">)&nbsp;</font><font color="#000000">+&nbsp;pathSeparator</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 2</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>for</b></font><font color="#000000">(</font><font color="#000000">String&nbsp;fileToIgnore&nbsp;:&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">LinkedHashSet&lt;String&gt;</font><font color="#000000">(</font><font color="#000000">filesToIgnore</font><font color="#000000">))</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">StringUtils.isNotBlank</font><font color="#000000">(</font><font color="#000000">fileToIgnore</font><font color="#000000">))</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#3f7f5f">//fileToIgnore.trim()&nbsp;-&gt;&nbsp;the&nbsp;filename&nbsp;to&nbsp;normalize,&nbsp;null&nbsp;returns&nbsp;null</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#000000">fileToIgnore=FilenameUtils.separatorsToSystem</font><font color="#000000">(</font><font color="#000000">FilenameUtils.normalize</font><font color="#000000">(</font><font color="#000000">fileToIgnore.trim</font><font color="#000000">()))</font><font color="#000000">;</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 3</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">FileInfo&nbsp;template;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">FileInfo&nbsp;filter;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;outputBasePath;</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;outputDirectory=getOutputPath</font><font color="#000000">(</font><font color="#000000">template,filter,outputBasePath</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#3f7f5f">//outputDirectory&nbsp;-&gt;&nbsp;the&nbsp;filename&nbsp;to&nbsp;normalize,&nbsp;null&nbsp;returns&nbsp;null</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#000000">FilenameUtils.normalize</font><font color="#000000">(</font><font color="#000000">outputDirectory</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 4</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;subDirectoryName;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">URL&nbsp;resource=getClass</font><font color="#000000">()</font><font color="#000000">.getResource</font><font color="#000000">(</font><font color="#2a00ff">&#34;/&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//resource.getFile()+subDirectoryName&nbsp;-&gt;&nbsp;the&nbsp;filename&nbsp;to&nbsp;normalize,&nbsp;null&nbsp;returns&nbsp;null</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">FilenameUtils.normalize</font><font color="#000000">(</font><font color="#000000">resource.getFile</font><font color="#000000">()&nbsp;</font><font color="#000000">+&nbsp;subDirectoryName</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 5</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#000000">String&nbsp;PATH_SEPARATOR=</font><font color="#2a00ff">&#34;/&#34;</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;outputBasePath;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">FileInfo&nbsp;filter;</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">FileInfo&nbsp;template;</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;outputPath=outputBasePath&nbsp;+&nbsp;PATH_SEPARATOR&nbsp;+&nbsp;filter.getRelativeSubDirectory</font><font color="#000000">()</font><font color="#000000">+&nbsp;filter.getNameWithoutExtension</font><font color="#000000">()</font><font color="#000000">+&nbsp;PATH_SEPARATOR+&nbsp;template.getRelativeSubDirectory</font><font color="#000000">()</font><font color="#000000">+&nbsp;PATH_SEPARATOR;</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#3f7f5f">//outputPath&nbsp;-&gt;&nbsp;the&nbsp;filename&nbsp;to&nbsp;normalize,&nbsp;null&nbsp;returns&nbsp;null</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#000000">FilenameUtils.normalize</font><font color="#000000">(</font><font color="#000000">outputPath</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 6</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#000000">String&nbsp;newValue;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#000000">String&nbsp;oldValue;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#000000">String&nbsp;path=newValue;</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#000000">String&nbsp;filename;</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">.equals</font><font color="#000000">(</font><font color="#000000">FilenameUtils.getExtension</font><font color="#000000">(</font><font color="#000000">newValue</font><font color="#000000">)))</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#000000">filename=FilenameUtils.getName</font><font color="#000000">(</font><font color="#000000">oldValue</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#000000">path=FilenameUtils.getPath</font><font color="#000000">(</font><font color="#000000">newValue</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#000000">filename=FilenameUtils.getName</font><font color="#000000">(</font><font color="#000000">newValue</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">Pattern&nbsp;p=Pattern.compile</font><font color="#000000">(</font><font color="#2a00ff">&#34;(.*?)#(.*?)(?:$|(/.*))&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#000000">Matcher&nbsp;m=p.matcher</font><font color="#000000">(</font><font color="#000000">path</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">m.find</font><font color="#000000">())</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">15</font>&nbsp;<font color="#000000">String&nbsp;prefix=m.group</font><font color="#000000">(</font><font color="#990000">1</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">16</font>&nbsp;<font color="#000000">String&nbsp;dir=m.group</font><font color="#000000">(</font><font color="#990000">2</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">17</font>&nbsp;<font color="#000000">String&nbsp;suffix=m.group</font><font color="#000000">(</font><font color="#990000">3</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">18</font>&nbsp;<font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">index=oldValue.indexOf</font><font color="#000000">(</font><font color="#000000">dir</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">19</font>&nbsp;<font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">length=dir.length</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">20</font>&nbsp;<font color="#000000">String&nbsp;remainder=FilenameUtils.getPath</font><font color="#000000">(</font><font color="#000000">oldValue.substring</font><font color="#000000">(</font><font color="#000000">index&nbsp;+&nbsp;length</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#808080">21</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">prefix&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">&amp;&amp;&nbsp;!prefix.equals</font><font color="#000000">(</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">))</font><br />
+<font color="#808080">22</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">23</font>&nbsp;<font color="#000000">path=prefix&nbsp;+&nbsp;remainder;</font><br />
+<font color="#808080">24</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">25</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">26</font>&nbsp;<font color="#000000">path=remainder;</font><br />
+<font color="#808080">27</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">suffix&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">&amp;&amp;&nbsp;!suffix.equals</font><font color="#000000">(</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">))</font><br />
+<font color="#808080">28</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">29</font>&nbsp;<font color="#000000">path+=suffix;</font><br />
+<font color="#808080">30</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">31</font>&nbsp;<font color="#3f7f5f">//path+&#34;/&#34;+filename&nbsp;-&gt;&nbsp;the&nbsp;filename&nbsp;to&nbsp;normalize,&nbsp;null&nbsp;returns&nbsp;null</font><br />
+<font color="#808080">32</font>&nbsp;<font color="#000000">FilenameUtils.normalize</font><font color="#000000">(</font><font color="#000000">path&nbsp;+&nbsp;</font><font color="#2a00ff">&#34;/&#34;&nbsp;</font><font color="#000000">+&nbsp;filename</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+</body></HTML>

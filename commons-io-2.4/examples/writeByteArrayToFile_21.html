@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>org.apache.commons.io.FileUtils.writeByteArrayToFile(java.io.File,byte[],boolean) - USAGE EXAMPLES</title>
+<style type="text/css">
+h3{color:#800; font-family:"Courier New", Courier, monospace; font-size:20px}
+</style>
+</head>
+<body style="background-color:#EEE">
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 1</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>public&nbsp;static&nbsp;final&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">MAX_AMR_FRAME_SIZE=</font><font color="#990000">32</font><font color="#000000">;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#7f0055"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">Mode&nbsp;amrMode;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#000000">File&nbsp;pcmFile;</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#000000">File&nbsp;amrFile;</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">dtx=</font><font color="#990000">0</font><font color="#000000">;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">count=</font><font color="#990000">0</font><font color="#000000">;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#000000">Pointer&nbsp;amr=AmrLibrary.INSTANCE.Encoder_Interface_init</font><font color="#000000">(</font><font color="#000000">dtx</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#7f0055"><b>short</b></font><font color="#000000">[]&nbsp;</font><font color="#000000">speech=</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#7f0055"><b>byte</b></font><font color="#000000">[]&nbsp;</font><font color="#000000">amrFrame=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#7f0055"><b>byte</b></font><font color="#000000">[</font><font color="#000000">MAX_AMR_FRAME_SIZE</font><font color="#000000">]</font><font color="#000000">;</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#7f0055"><b>try</b></font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#000000">FileInputStream&nbsp;in=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">FileInputStream</font><font color="#000000">(</font><font color="#000000">pcmFile</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#7f0055"><b>while</b></font><font color="#000000">(</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">!=&nbsp;</font><font color="#000000">(</font><font color="#000000">speech=readFrame</font><font color="#000000">(</font><font color="#000000">in</font><font color="#000000">)))</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">15</font>&nbsp;<font color="#000000">count=AmrLibrary.INSTANCE.Encoder_Interface_Encode</font><font color="#000000">(</font><font color="#000000">amr,amrMode.ordinal</font><font color="#000000">()</font><font color="#000000">,speech,amrFrame,</font><font color="#990000">0</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">16</font>&nbsp;<font color="#7f0055"><b>try</b></font><br />
+<font color="#808080">17</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">18</font>&nbsp;<font color="#3f7f5f">//amrFile&nbsp;-&gt;&nbsp;the&nbsp;file&nbsp;to&nbsp;write&nbsp;to</font><br />
+<font color="#808080">19</font>&nbsp;<font color="#3f7f5f">//amrFrame=copyOf(amrFrame,count)&nbsp;-&gt;&nbsp;the&nbsp;content&nbsp;to&nbsp;write&nbsp;to&nbsp;the&nbsp;file</font><br />
+<font color="#808080">20</font>&nbsp;<font color="#3f7f5f">//true&nbsp;-&gt;&nbsp;if&nbsp;true&nbsp;,&nbsp;then&nbsp;bytes&nbsp;will&nbsp;be&nbsp;added&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;file&nbsp;rather&nbsp;than&nbsp;overwriting</font><br />
+<font color="#808080">21</font>&nbsp;<font color="#000000">writeByteArrayToFile</font><font color="#000000">(</font><font color="#000000">amrFile,amrFrame=copyOf</font><font color="#000000">(</font><font color="#000000">amrFrame,count</font><font color="#000000">)</font><font color="#000000">,true</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">22</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">23</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">24</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+</body></HTML>

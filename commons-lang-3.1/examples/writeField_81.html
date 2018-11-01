@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>org.apache.commons.lang3.reflect.FieldUtils.writeField(java.lang.Object,java.lang.String,java.lang.Object,boolean) - USAGE EXAMPLES</title>
+<style type="text/css">
+h3{color:#800; font-family:"Courier New", Courier, monospace; font-size:20px}
+</style>
+</head>
+<body style="background-color:#EEE">
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 1</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">LessCompiler&nbsp;lessCompiler;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#646464">@Mock&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">ByteArrayOutputStream&nbsp;out;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//lessCompiler&nbsp;-&gt;&nbsp;the&nbsp;object&nbsp;to&nbsp;reflect,&nbsp;must&nbsp;not&nbsp;be&nbsp;null</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//&#34;out&#34;&nbsp;-&gt;&nbsp;the&nbsp;field&nbsp;name&nbsp;to&nbsp;obtain</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#3f7f5f">//out&nbsp;-&gt;&nbsp;to&nbsp;set</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#3f7f5f">//true&nbsp;-&gt;&nbsp;whether&nbsp;to&nbsp;break&nbsp;scope&nbsp;restrictions&nbsp;using&nbsp;the&nbsp;&lt;code&gt;setAccessible&lt;/code&gt;&nbsp;method.&nbsp;&lt;code&gt;False&lt;/code&gt;&nbsp;will&nbsp;only&nbsp;match&nbsp;public&nbsp;fields.</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#000000">FieldUtils.writeField</font><font color="#000000">(</font><font color="#000000">lessCompiler,</font><font color="#2a00ff">&#34;out&#34;</font><font color="#000000">,out,true</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 2</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">LessSource&nbsp;lessSource;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#646464">@Mock&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">File&nbsp;file;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">Map&lt;String,LessSource&gt;&nbsp;imports;</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">lessSource=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">LessSource</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">FileResource</font><font color="#000000">(</font><font color="#000000">file</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#3f7f5f">//lessSource&nbsp;-&gt;&nbsp;the&nbsp;object&nbsp;to&nbsp;reflect,&nbsp;must&nbsp;not&nbsp;be&nbsp;null</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#3f7f5f">//&#34;imports&#34;&nbsp;-&gt;&nbsp;the&nbsp;field&nbsp;name&nbsp;to&nbsp;obtain</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#3f7f5f">//imports&nbsp;-&gt;&nbsp;to&nbsp;set</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#3f7f5f">//true&nbsp;-&gt;&nbsp;whether&nbsp;to&nbsp;break&nbsp;scope&nbsp;restrictions&nbsp;using&nbsp;the&nbsp;&lt;code&gt;setAccessible&lt;/code&gt;&nbsp;method.&nbsp;&lt;code&gt;False&lt;/code&gt;&nbsp;will&nbsp;only&nbsp;match&nbsp;public&nbsp;fields.</font><br />
+<font color="#808080">9</font>&nbsp;<font color="#000000">FieldUtils.writeField</font><font color="#000000">(</font><font color="#000000">lessSource,</font><font color="#2a00ff">&#34;imports&#34;</font><font color="#000000">,imports,true</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 3</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">LessCompiler&nbsp;lessCompiler;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#646464">@Mock&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">LessLogger&nbsp;logger;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">lessCompiler=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">LessCompiler</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//lessCompiler&nbsp;-&gt;&nbsp;the&nbsp;object&nbsp;to&nbsp;reflect,&nbsp;must&nbsp;not&nbsp;be&nbsp;null</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#3f7f5f">//&#34;logger&#34;&nbsp;-&gt;&nbsp;the&nbsp;field&nbsp;name&nbsp;to&nbsp;obtain</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#3f7f5f">//logger&nbsp;-&gt;&nbsp;to&nbsp;set</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#3f7f5f">//true&nbsp;-&gt;&nbsp;whether&nbsp;to&nbsp;break&nbsp;scope&nbsp;restrictions&nbsp;using&nbsp;the&nbsp;&lt;code&gt;setAccessible&lt;/code&gt;&nbsp;method.&nbsp;&lt;code&gt;False&lt;/code&gt;&nbsp;will&nbsp;only&nbsp;match&nbsp;public&nbsp;fields.</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#000000">FieldUtils.writeField</font><font color="#000000">(</font><font color="#000000">lessCompiler,</font><font color="#2a00ff">&#34;logger&#34;</font><font color="#000000">,logger,true</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+</body></HTML>

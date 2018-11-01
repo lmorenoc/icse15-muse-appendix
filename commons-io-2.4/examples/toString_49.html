@@ -1,0 +1,516 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>org.apache.commons.io.IOUtils.toString(java.io.InputStream,java.lang.String) - USAGE EXAMPLES</title>
+<style type="text/css">
+h3{color:#800; font-family:"Courier New", Courier, monospace; font-size:20px}
+</style>
+</head>
+<body style="background-color:#EEE">
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 1</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">HttpClient&nbsp;http;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#7f0055"><b>try</b></font><br />
+<font color="#808080">03</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#000000">List&lt;NameValuePair&gt;&nbsp;params=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">ArrayList&lt;NameValuePair&gt;</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#000000">HttpGet&nbsp;request=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">HttpGet</font><font color="#000000">(</font><font color="#2a00ff">&#34;https://ssl.ptlogin2.qq.com/login?&#34;&nbsp;</font><font color="#000000">+&nbsp;StringUtils.join</font><font color="#000000">(</font><font color="#000000">params,</font><font color="#2a00ff">&#34;&amp;&#34;</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#000000">HttpResponse&nbsp;response=http.execute</font><font color="#000000">(</font><font color="#000000">request</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#000000">StatusLine&nbsp;statusLine=response.getStatusLine</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">statusLine&nbsp;==&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">||&nbsp;statusLine.getStatusCode</font><font color="#000000">()&nbsp;</font><font color="#000000">!=&nbsp;HttpStatus.SC_OK&nbsp;||&nbsp;response.getEntity</font><font color="#000000">()&nbsp;</font><font color="#000000">==&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">)</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#7f0055"><b>throw&nbsp;new&nbsp;</b></font><font color="#000000">SocialException</font><font color="#000000">(</font><font color="#000000">String.valueOf</font><font color="#000000">(</font><font color="#000000">statusLine</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#000000">String&nbsp;result=IOUtils.toString</font><font color="#000000">(</font><font color="#000000">response.getEntity</font><font color="#000000">()</font><font color="#000000">.getContent</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#000000">String</font><font color="#000000">[]&nbsp;</font><font color="#000000">str=result.substring</font><font color="#000000">(</font><font color="#990000">7</font><font color="#000000">,result.length</font><font color="#000000">()&nbsp;</font><font color="#000000">-&nbsp;</font><font color="#990000">1</font><font color="#000000">)</font><font color="#000000">.split</font><font color="#000000">(</font><font color="#2a00ff">&#34;,&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">!</font><font color="#2a00ff">&#34;0&#34;</font><font color="#000000">.equals</font><font color="#000000">(</font><font color="#000000">str</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">]</font><font color="#000000">.trim</font><font color="#000000">()</font><font color="#000000">.substring</font><font color="#000000">(</font><font color="#990000">1</font><font color="#000000">,str</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">]</font><font color="#000000">.length</font><font color="#000000">()&nbsp;</font><font color="#000000">-&nbsp;</font><font color="#990000">1</font><font color="#000000">)))</font><br />
+<font color="#808080">15</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">16</font>&nbsp;<font color="#7f0055"><b>throw&nbsp;new&nbsp;</b></font><font color="#000000">SocialException</font><font color="#000000">(</font><font color="#000000">str</font><font color="#000000">[</font><font color="#990000">4</font><font color="#000000">])</font><font color="#000000">;</font><br />
+<font color="#808080">17</font>&nbsp;<font color="#000000">request=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">HttpGet</font><font color="#000000">(</font><font color="#000000">str</font><font color="#000000">[</font><font color="#990000">2</font><font color="#000000">]</font><font color="#000000">.trim</font><font color="#000000">()</font><font color="#000000">.substring</font><font color="#000000">(</font><font color="#990000">1</font><font color="#000000">,str</font><font color="#000000">[</font><font color="#990000">2</font><font color="#000000">]</font><font color="#000000">.length</font><font color="#000000">()&nbsp;</font><font color="#000000">-&nbsp;</font><font color="#990000">1</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#808080">18</font>&nbsp;<font color="#000000">response=http.execute</font><font color="#000000">(</font><font color="#000000">request</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">19</font>&nbsp;<font color="#000000">statusLine=response.getStatusLine</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">20</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">statusLine&nbsp;==&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">||&nbsp;statusLine.getStatusCode</font><font color="#000000">()&nbsp;</font><font color="#000000">!=&nbsp;HttpStatus.SC_OK&nbsp;||&nbsp;response.getEntity</font><font color="#000000">()&nbsp;</font><font color="#000000">==&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">)</font><br />
+<font color="#808080">21</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">22</font>&nbsp;<font color="#7f0055"><b>throw&nbsp;new&nbsp;</b></font><font color="#000000">SocialException</font><font color="#000000">(</font><font color="#000000">String.valueOf</font><font color="#000000">(</font><font color="#000000">statusLine</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#808080">23</font>&nbsp;<font color="#000000">result=IOUtils.toString</font><font color="#000000">(</font><font color="#000000">response.getEntity</font><font color="#000000">()</font><font color="#000000">.getContent</font><font color="#000000">()</font><font color="#000000">,</font><font color="#2a00ff">&#34;GB18030&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">24</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">25</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">26</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 2</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">Bout&nbsp;bout=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">MkBase</font><font color="#000000">()</font><font color="#000000">.randomBout</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">Attachments&nbsp;attachments=bout.attachments</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;name=</font><font color="#2a00ff">&#34;test-name&#34;</font><font color="#000000">;</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">Attachment&nbsp;attachment=attachments.get</font><font color="#000000">(</font><font color="#000000">name</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#3f7f5f">//attachment.read()&nbsp;-&gt;&nbsp;the&nbsp;&lt;code&gt;InputStream&lt;/code&gt;&nbsp;to&nbsp;read&nbsp;from</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#3f7f5f">//CharEncoding.UTF_8&nbsp;-&gt;&nbsp;the&nbsp;encoding&nbsp;to&nbsp;use,&nbsp;null&nbsp;means&nbsp;platform&nbsp;default</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#000000">IOUtils.toString</font><font color="#000000">(</font><font color="#000000">attachment.read</font><font color="#000000">()</font><font color="#000000">,CharEncoding.UTF_8</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 3</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">MemoryConnector&nbsp;mc;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">MemoryDocument&nbsp;testDoc=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">MemoryDocument</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">String&nbsp;fileName=</font><font color="#2a00ff">&#34;test.txt&#34;</font><font color="#000000">;</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">DocumentFile&lt;MemoryType&gt;&nbsp;df=mc.getDocumentReader</font><font color="#000000">()</font><font color="#000000">.getDocumentFile</font><font color="#000000">(</font><font color="#000000">testDoc,fileName</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#3f7f5f">//df.getStream()&nbsp;-&gt;&nbsp;the&nbsp;&lt;code&gt;InputStream&lt;/code&gt;&nbsp;to&nbsp;read&nbsp;from</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#3f7f5f">//&#34;UTF-8&#34;&nbsp;-&gt;&nbsp;the&nbsp;encoding&nbsp;to&nbsp;use,&nbsp;null&nbsp;means&nbsp;platform&nbsp;default</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#000000">IOUtils.toString</font><font color="#000000">(</font><font color="#000000">df.getStream</font><font color="#000000">()</font><font color="#000000">,</font><font color="#2a00ff">&#34;UTF-8&#34;</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 4</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">InputStream&nbsp;stream;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//stream&nbsp;-&gt;&nbsp;the&nbsp;&lt;code&gt;InputStream&lt;/code&gt;&nbsp;to&nbsp;read&nbsp;from</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//CharEncoding.UTF_8&nbsp;-&gt;&nbsp;the&nbsp;encoding&nbsp;to&nbsp;use,&nbsp;null&nbsp;means&nbsp;platform&nbsp;default</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">IOUtils.toString</font><font color="#000000">(</font><font color="#000000">stream,CharEncoding.UTF_8</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 5</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">HttpUriRequest&nbsp;httpost;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">HttpResponse&nbsp;response=execute</font><font color="#000000">(</font><font color="#000000">httpost</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">HttpEntity&nbsp;entity=response.getEntity</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">InputStream&nbsp;contentIS=entity.getContent</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">Header&nbsp;contentType=entity.getContentType</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">HeaderElement</font><font color="#000000">[]&nbsp;</font><font color="#000000">elements=contentType.getElements</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">HeaderElement&nbsp;headerElement=elements</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">]</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">NameValuePair&nbsp;parameterByName=headerElement.getParameterByName</font><font color="#000000">(</font><font color="#2a00ff">&#34;charset&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#000000">String&nbsp;encoding=</font><font color="#2a00ff">&#34;UTF-8&#34;</font><font color="#000000">;</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">parameterByName&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">)</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#000000">encoding=parameterByName.getValue</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#7f0055"><b>if</b></font><font color="#000000">(</font><font color="#000000">encoding&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">&amp;&amp;&nbsp;encoding.equals</font><font color="#000000">(</font><font color="#2a00ff">&#34;ISO-8859-1&#34;</font><font color="#000000">))</font><br />
+<font color="#808080">15</font>&nbsp;<font color="#000000">{</font><br />
+<font color="#808080">16</font>&nbsp;<font color="#000000">encoding=</font><font color="#2a00ff">&#34;CP1252&#34;</font><font color="#000000">;</font><br />
+<font color="#808080">17</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#808080">18</font>&nbsp;<font color="#3f7f5f">//contentIS&nbsp;-&gt;&nbsp;the&nbsp;&lt;code&gt;InputStream&lt;/code&gt;&nbsp;to&nbsp;read&nbsp;from</font><br />
+<font color="#808080">19</font>&nbsp;<font color="#3f7f5f">//encoding&nbsp;-&gt;&nbsp;the&nbsp;encoding&nbsp;to&nbsp;use,&nbsp;null&nbsp;means&nbsp;platform&nbsp;default</font><br />
+<font color="#808080">20</font>&nbsp;<font color="#000000">IOUtils.toString</font><font color="#000000">(</font><font color="#000000">contentIS,encoding</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 6</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">Attachment&nbsp;attachment;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//attachment.read()&nbsp;-&gt;&nbsp;the&nbsp;&lt;code&gt;InputStream&lt;/code&gt;&nbsp;to&nbsp;read&nbsp;from</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//CharEncoding.UTF_8&nbsp;-&gt;&nbsp;the&nbsp;encoding&nbsp;to&nbsp;use,&nbsp;null&nbsp;means&nbsp;platform&nbsp;default</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">IOUtils.toString</font><font color="#000000">(</font><font color="#000000">attachment.read</font><font color="#000000">()</font><font color="#000000">,CharEncoding.UTF_8</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 7</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">String&nbsp;resource;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//getClass().getResourceAsStream(resource)&nbsp;-&gt;&nbsp;the&nbsp;&lt;code&gt;InputStream&lt;/code&gt;&nbsp;to&nbsp;read&nbsp;from</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//&#34;UTF-8&#34;&nbsp;-&gt;&nbsp;the&nbsp;encoding&nbsp;to&nbsp;use,&nbsp;null&nbsp;means&nbsp;platform&nbsp;default</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">IOUtils.toString</font><font color="#000000">(</font><font color="#000000">getClass</font><font color="#000000">()</font><font color="#000000">.getResourceAsStream</font><font color="#000000">(</font><font color="#000000">resource</font><font color="#000000">)</font><font color="#000000">,</font><font color="#2a00ff">&#34;UTF-8&#34;</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 8</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">InputStream&nbsp;in=getClass</font><font color="#000000">()</font><font color="#000000">.getResourceAsStream</font><font color="#000000">(</font><font color="#2a00ff">&#34;/json.bnf&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//in&nbsp;-&gt;&nbsp;the&nbsp;&lt;code&gt;InputStream&lt;/code&gt;&nbsp;to&nbsp;read&nbsp;from</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//&#34;UTF-8&#34;&nbsp;-&gt;&nbsp;the&nbsp;encoding&nbsp;to&nbsp;use,&nbsp;null&nbsp;means&nbsp;platform&nbsp;default</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">IOUtils.toString</font><font color="#000000">(</font><font color="#000000">in,</font><font color="#2a00ff">&#34;UTF-8&#34;</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 9</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#3f7f5f">//DatabaseTest.class.getResourceAsStream(&#34;/create.sql&#34;)&nbsp;-&gt;&nbsp;the&nbsp;&lt;code&gt;InputStream&lt;/code&gt;&nbsp;to&nbsp;read&nbsp;from</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//&#34;UTF-8&#34;&nbsp;-&gt;&nbsp;the&nbsp;encoding&nbsp;to&nbsp;use,&nbsp;null&nbsp;means&nbsp;platform&nbsp;default</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">IOUtils.toString</font><font color="#000000">(</font><font color="#000000">DatabaseTest.</font><font color="#7f0055"><b>class</b></font><font color="#000000">.getResourceAsStream</font><font color="#000000">(</font><font color="#2a00ff">&#34;/create.sql&#34;</font><font color="#000000">)</font><font color="#000000">,</font><font color="#2a00ff">&#34;UTF-8&#34;</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 10</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">RESTServer&nbsp;server;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">RemotePipeline&nbsp;rp=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">RemotePipeline</font><font color="#000000">(</font><font color="#2a00ff">&#34;localhost&#34;</font><font color="#000000">,server.getPort</font><font color="#000000">()</font><font color="#000000">,</font><font color="#2a00ff">&#34;stage&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">MemoryDocument&nbsp;testDoc=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">MemoryDocument</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">String&nbsp;fileName=</font><font color="#2a00ff">&#34;test.txt&#34;</font><font color="#000000">;</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">String&nbsp;fileName2=</font><font color="#2a00ff">&#34;test2.txt&#34;</font><font color="#000000">;</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#000000">InputStream&nbsp;s=rp.getFile</font><font color="#000000">(</font><font color="#000000">fileName,testDoc.getID</font><font color="#000000">()</font><font color="#000000">.getLocalDocumentID</font><font color="#000000">())</font><font color="#000000">.getStream</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#3f7f5f">//s&nbsp;-&gt;&nbsp;the&nbsp;&lt;code&gt;InputStream&lt;/code&gt;&nbsp;to&nbsp;read&nbsp;from</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#3f7f5f">//&#34;UTF-8&#34;&nbsp;-&gt;&nbsp;the&nbsp;encoding&nbsp;to&nbsp;use,&nbsp;null&nbsp;means&nbsp;platform&nbsp;default</font><br />
+<font color="#808080">9</font>&nbsp;<font color="#000000">IOUtils.toString</font><font color="#000000">(</font><font color="#000000">s,</font><font color="#2a00ff">&#34;UTF-8&#34;</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 11</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#3f7f5f">//getClass().getResourceAsStream(&#34;/com/cloudsponge/applet.snippet&#34;)&nbsp;-&gt;&nbsp;the&nbsp;&lt;code&gt;InputStream&lt;/code&gt;&nbsp;to&nbsp;read&nbsp;from</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//&#34;UTF-8&#34;&nbsp;-&gt;&nbsp;the&nbsp;encoding&nbsp;to&nbsp;use,&nbsp;null&nbsp;means&nbsp;platform&nbsp;default</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">IOUtils.toString</font><font color="#000000">(</font><font color="#000000">getClass</font><font color="#000000">()</font><font color="#000000">.getResourceAsStream</font><font color="#000000">(</font><font color="#2a00ff">&#34;/com/cloudsponge/applet.snippet&#34;</font><font color="#000000">)</font><font color="#000000">,</font><font color="#2a00ff">&#34;UTF-8&#34;</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 12</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#3f7f5f">//df.getStream()&nbsp;-&gt;&nbsp;the&nbsp;&lt;code&gt;InputStream&lt;/code&gt;&nbsp;to&nbsp;read&nbsp;from</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//df.getEncoding()&nbsp;-&gt;&nbsp;the&nbsp;encoding&nbsp;to&nbsp;use,&nbsp;null&nbsp;means&nbsp;platform&nbsp;default</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#000000">IOUtils.toString</font><font color="#000000">(</font><font color="#000000">df.getStream</font><font color="#000000">()</font><font color="#000000">,df.getEncoding</font><font color="#000000">())</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 13</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#000000">ClassLoader&nbsp;loader=Thread.currentThread</font><font color="#000000">()</font><font color="#000000">.getContextClassLoader</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#000000">InputStream&nbsp;is=loader.getResourceAsStream</font><font color="#000000">(</font><font color="#2a00ff">&#34;com/mgmtp/perfload/core/common/version.txt&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//is&nbsp;-&gt;&nbsp;the&nbsp;&lt;code&gt;InputStream&lt;/code&gt;&nbsp;to&nbsp;read&nbsp;from</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#3f7f5f">//&#34;UTF-8&#34;&nbsp;-&gt;&nbsp;the&nbsp;encoding&nbsp;to&nbsp;use,&nbsp;null&nbsp;means&nbsp;platform&nbsp;default</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#000000">IOUtils.toString</font><font color="#000000">(</font><font color="#000000">is,</font><font color="#2a00ff">&#34;UTF-8&#34;</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+<table align="center" style="border-width:1px; border-color:#800; margin: 0px auto;" width="80%">
+<tr><td bgcolor="#DDDDDD" style="padding-left:20px; padding-right:20px">
+<h3>Example 14</h3>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#646464">@NotNull&nbsp;</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">InputStream&nbsp;stream;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#3f7f5f">//stream&nbsp;-&gt;&nbsp;the&nbsp;&lt;code&gt;InputStream&lt;/code&gt;&nbsp;to&nbsp;read&nbsp;from</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#3f7f5f">//CharEncoding.UTF_8&nbsp;-&gt;&nbsp;the&nbsp;encoding&nbsp;to&nbsp;use,&nbsp;null&nbsp;means&nbsp;platform&nbsp;default</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#000000">IOUtils.toString</font><font color="#000000">(</font><font color="#000000">stream,CharEncoding.UTF_8</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<br>
+</td></tr>
+</table>
+<br>
+</body></HTML>
